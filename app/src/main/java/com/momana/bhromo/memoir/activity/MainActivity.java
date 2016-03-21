@@ -13,11 +13,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.momana.bhromo.memoir.R;
+import com.momana.bhromo.memoir.adapter.NotesCalendarAdapter;
 import com.momana.bhromo.memoir.fragment.AtlasFragment;
 import com.momana.bhromo.memoir.fragment.CalendarFragment;
 import com.momana.bhromo.memoir.fragment.NotesFragment;
+
+import java.text.SimpleDateFormat;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -26,6 +30,8 @@ import butterknife.OnClick;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String LAST_SELECTION_KEY = "last_drawer_selection";
+
+    private int currentPosition;
 
     @Bind(R.id.toolbar)         Toolbar toolbar;
     @Bind(R.id.drawer_layout)   DrawerLayout drawerLayout;
@@ -89,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
     }
     private void setSelectedDrawerItem(int position) {
+        currentPosition = position;
+
         MenuItem item = navigationView.getMenu().getItem(position);
         item.setChecked(true);
 
@@ -122,6 +130,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void onAddButtonClicked() {
         Intent intent = new Intent(this, ViewActivity.class);
         intent.putExtra(ViewActivity.ACTION_TYPE_KEY, ViewActivity.ACTION_TYPE_NEW);
+        // Add date as extra if in calendar view
+        if (currentPosition == 1) {
+            SimpleDateFormat fmt = new SimpleDateFormat("ddMMyyyy");
+            intent.putExtra(ViewActivity.NOTE_DATE_KEY, fmt.format(NotesCalendarAdapter.currentDate));
+        }
         startActivity(intent);
     }
 }

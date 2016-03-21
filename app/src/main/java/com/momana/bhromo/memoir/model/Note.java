@@ -18,6 +18,9 @@ public class Note {
     public String getSimpleBody() {
         return android.text.Html.fromHtml(body).toString();
     }
+    public String getSimpleBodyWithoutLines() {
+        return getSimpleBody().replace("\n", " ");
+    }
     public String getDayOfMonth() {
         String dayOfMon = calendar.get(Calendar.DAY_OF_MONTH) + "";
         if (dayOfMon.length() == 1) {

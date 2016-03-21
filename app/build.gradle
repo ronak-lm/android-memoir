@@ -20,7 +20,9 @@ android {
 }
 
 repositories {
-    maven { url "https://jitpack.io" }
+    maven {
+        url "https://jitpack.io"
+    }
     flatDir {
         dirs 'libs'
     }
@@ -36,5 +38,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.1.1'
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.google.android.gms:play-services-location:8.4.0'
+    compile 'com.github.jonisaa:MaterialCalendarview:v1.2.2'
     compile 'com.lsjwzh:materialloadingprogressbar:0.5.6-RELEASE'
 }

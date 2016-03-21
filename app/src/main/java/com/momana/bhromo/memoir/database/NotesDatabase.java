@@ -6,7 +6,10 @@ import android.content.SharedPreferences;
 import com.google.gson.Gson;
 import com.momana.bhromo.memoir.model.Note;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.UUID;
 
 public class NotesDatabase {
@@ -88,6 +91,17 @@ public class NotesDatabase {
     private ArrayList<Note> notes;
     public ArrayList<Note> getNotes() {
         return notes;
+    }
+    public ArrayList<Note> getNotesOfDate(Date date) {
+        SimpleDateFormat fmt = new SimpleDateFormat("yyyyMMdd");
+        ArrayList<Note> dateNotes = new ArrayList<>();
+        for (int i = 0; i < notes.size(); i++) {
+            boolean isSameDay = fmt.format(date).equals(fmt.format(notes.get(i).calendar.getTime()));
+            if (isSameDay) {
+                dateNotes.add(notes.get(i));
+            }
+        }
+        return dateNotes;
     }
     public Note getNoteByID(String noteId) {
         for (int i = 0; i < notes.size(); i++) {

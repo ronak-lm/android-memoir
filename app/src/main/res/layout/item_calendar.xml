@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.samsistemas.calendarview.widget.CalendarView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/calendar_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="?attr/actionBarSize"
+    app:calendarBackgroundColor="@color/primary"
+    app:calendarTitleTextColor="@android:color/white"
+    app:currentDayOfMonthColor="@android:color/white"
+    app:dayOfMonthTextColor="@android:color/white"
+    app:dayOfWeekTextColor="@android:color/white"
+    app:disabledDayBackgroundColor="@color/primary"
+    app:disabledDayTextColor="@color/calendar_gray"
+    app:selectedDayBackgroundColor="@color/primary_dark"
+    app:titleLayoutBackgroundColor="@color/primary"
+    app:weekLayoutBackgroundColor="@color/primary" />

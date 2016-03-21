@@ -33,7 +33,7 @@ public class NoteGridAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        ViewGroup v = (ViewGroup) LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note, parent, false);
+        ViewGroup v = (ViewGroup) LayoutInflater.from(parent.getContext()).inflate(R.layout.item_note_grid, parent, false);
         return new NoteViewHolder(v, onItemClickListener);
     }
     @Override

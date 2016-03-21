@@ -15,5 +15,6 @@
     <!-- Other Colors -->
     <color name="card_background">#fafafa</color>
     <color name="background_tint">#af000000</color>
+    <color name="calendar_gray">#b4b4b4</color>
 
 </resources>

@@ -46,6 +46,7 @@ import com.onegravity.rteditor.api.RTApi;
 import com.onegravity.rteditor.api.RTMediaFactoryImpl;
 import com.onegravity.rteditor.api.RTProxyImpl;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.UUID;
 
@@ -56,6 +57,7 @@ import butterknife.OnClick;
 public class ViewActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 
     public static final String NOTE_ID_KEY = "note_id";
+    public static final String NOTE_DATE_KEY = "note_date";
     public static final String ACTION_TYPE_KEY = "action_type";
     public static final int ACTION_TYPE_NEW = 0;
     public static final int ACTION_TYPE_EDIT = 1;
@@ -112,6 +114,12 @@ public class ViewActivity extends AppCompatActivity implements DatePickerDialog.
             noteId = UUID.randomUUID().toString();
             note = new Note(noteId, "Untitled", "");
             NotesDatabase.getInstance(this).addNote(note);
+            if (getIntent().getExtras().containsKey(NOTE_DATE_KEY)) {
+                SimpleDateFormat fmt = new SimpleDateFormat("ddMMyyyy");
+                try {
+                    note.calendar.setTime(fmt.parse(getIntent().getStringExtra(NOTE_DATE_KEY)));
+                } catch (Exception ignored) {}
+            }
             refreshLayout();
         }
 

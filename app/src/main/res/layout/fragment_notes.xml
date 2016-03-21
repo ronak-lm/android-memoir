@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:padding="@dimen/small"
         android:clipToPadding="false"
-        tools:listitem="@layout/item_note" />
+        tools:listitem="@layout/item_note_grid" />
 
     <TextView android:id="@+id/placeholder_text"
         android:layout_width="wrap_content"
