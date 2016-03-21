@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/date_holder"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/medium"
+    android:paddingLeft="@dimen/small"
+    android:paddingRight="@dimen/small"
+    android:gravity="center_vertical"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:orientation="horizontal">
+
+    <TextView android:id="@+id/date_dayOfMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/view_dayOfMonth_size"
+        tools:text="01"/>
+
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/small"
+        android:layout_marginStart="@dimen/small">
+
+        <TextView android:id="@+id/date_dayOfWeek"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Monday"/>
+
+        <TextView android:id="@+id/date_monthAndYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="December 2015"/>
+
+    </LinearLayout>
+
+</LinearLayout>

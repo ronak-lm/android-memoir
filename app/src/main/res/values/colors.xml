@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Theme Colors -->
+    <color name="primary">#4CAF50</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="accent">#FF5252</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#000000</color>
+    <color name="text_primary_chrome">#616161</color>
+    <color name="text_secondary">#ffffff</color>
+    <color name="text_secondary_chrome">#eeeeee</color>
+
+    <!-- Other Colors -->
+    <color name="card_background">#fafafa</color>
+    <color name="background_tint">#af000000</color>
+
+</resources>

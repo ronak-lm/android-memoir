@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/text_secondary"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.EditActivity"
+    tools:showIn="@layout/activity_edit">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rte_toolbar_container">
+
+        <com.onegravity.rteditor.RTEditText
+            android:id="@+id/edit_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/large"
+            android:background="@null"
+            android:hint="@string/view_note_body_hint"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/text_xlarge"
+            android:imeOptions="actionDone|flagNoEnterAction"
+            android:inputType="textMultiLine|textAutoCorrect|textCapSentences"
+            tools:ignore="UnusedAttribute" />
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <include layout="@layout/layout_editor_toolbar"
+        android:id="@+id/rte_toolbar_container"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

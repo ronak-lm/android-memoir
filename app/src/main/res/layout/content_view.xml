@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activity.ViewActivity"
+    tools:showIn="@layout/activity_view">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/layout_view_date" />
+
+                <include layout="@layout/layout_view_time" />
+
+            </RelativeLayout>
+
+            <include layout="@layout/layout_view_note" />
+
+            <include layout="@layout/layout_view_location" />
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <FrameLayout android:id="@+id/background_tint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_tint"
+        android:visibility="gone">
+
+        <com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+            android:id="@+id/progress_circle"
+            android:layout_width="@dimen/progress_circle_width"
+            android:layout_height="@dimen/progress_circle_height"
+            android:layout_gravity="center"
+            app:mlpb_progress_stoke_width="@dimen/progress_circle_stroke"
+            app:mlpb_show_arrow="false"
+            app:mlpb_enable_circle_background="false"
+            app:mlpb_progress_color="@color/accent"
+            app:mlpb_progress_text_visibility="invisible" />
+
+        <TextView android:id="@+id/loading_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/note_loading"
+            android:textSize="@dimen/text_xlarge"
+            android:textStyle="bold"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone"/>
+
+    </FrameLayout>
+
+</FrameLayout>

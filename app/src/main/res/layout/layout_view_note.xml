@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView android:id="@+id/note_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small"
+        android:layout_marginLeft="@dimen/large"
+        android:layout_marginRight="@dimen/large"
+        android:layout_marginBottom="@dimen/small"
+        android:paddingTop="@dimen/medium"
+        android:paddingBottom="@dimen/medium"
+        android:gravity="center_horizontal"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_xxxlarge"
+        android:textColor="@color/accent"
+        tools:text="A SONG OF ICE AND FIRE"
+        tools:ignore="UnusedAttribute" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.onegravity.rteditor.RTEditText
+            android:id="@+id/note_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/medium"
+            android:paddingLeft="@dimen/large"
+            android:paddingRight="@dimen/large"
+            android:paddingBottom="@dimen/medium"
+            android:background="@null"
+            android:clickable="false"
+            android:inputType="none"
+            android:cursorVisible="false"
+            android:fontFamily="sans-serif-light"
+            android:textSize="@dimen/text_xlarge"
+            tools:text="A Song of Ice and Fire is a series of epic fantasy novels by the American novelist and screenwriter George R. R. Martin. The first volume of the series, A Game of Thrones, was begun in 1991 and first published in 1996. The series has grown from a planned trilogy to seven volumes, the fifth and most recent of which, A Dance with Dragons, took Martin five years to write before its publication in 2011. The sixth novel, The Winds of Winter, is still being written."
+            tools:ignore="UnusedAttribute" />
+
+        <FrameLayout android:id="@+id/edit_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackground"
+            android:clickable="false" />
+
+    </FrameLayout>
+
+</LinearLayout>

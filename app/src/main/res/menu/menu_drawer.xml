@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_notes"
+        android:checkableBehavior="single">
+
+        <item android:id="@+id/drawer_notes"
+            android:title="@string/drawer_notes"
+            android:icon="@drawable/drawer_notes"/>
+
+        <item android:id="@+id/drawer_calendar"
+            android:title="@string/drawer_calendar"
+            android:icon="@drawable/drawer_calendar"/>
+
+        <item android:id="@+id/drawer_atlas"
+            android:title="@string/drawer_atlas"
+            android:icon="@drawable/drawer_atlas"/>
+
+    </group>
+
+    <group android:id="@+id/group_options"
+        android:checkableBehavior="none">
+
+        <item android:id="@+id/drawer_settings"
+            android:title="@string/drawer_settings"
+            android:icon="@drawable/drawer_settings"/>
+
+        <item android:id="@+id/drawer_about"
+            android:title="@string/drawer_about"
+            android:icon="@drawable/drawer_about"/>
+
+    </group>
+
+</menu>

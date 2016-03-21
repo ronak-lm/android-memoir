@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/location_remove"
+        android:title="@string/location_remove"/>
+
+    <item android:id="@+id/location_detect"
+        android:title="@string/location_detect"/>
+
+    <item android:id="@+id/location_select"
+        android:title="@string/location_select"/>
+
+</menu>
