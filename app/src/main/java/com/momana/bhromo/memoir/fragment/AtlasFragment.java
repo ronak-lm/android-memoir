@@ -1,16 +1,17 @@
 package com.momana.bhromo.memoir.fragment;
 
-import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import com.google.android.gms.common.GooglePlayServicesNotAvailableException;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -18,7 +19,6 @@ import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -32,6 +32,9 @@ import com.momana.bhromo.memoir.model.Note;
 import java.util.ArrayList;
 
 public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMarkerClickListener {
+
+    public static final int PERMISSION_ACCESS_COARSE_LOCATION = 11;
+    public static final int PERMISSION_ACCESS_FINE_LOCATION = 12;
 
     private ArrayList<Note> noteList;
     private MapView mMapView;
@@ -112,6 +115,21 @@ public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMar
         mMap = googleMap;
         mMap.setOnMarkerClickListener(this);
         refreshMarkers();
+
+        // On Marshmallow request for permissions first before showing location
+        if (Build.VERSION.SDK_INT >= 23) {
+            if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION }, PERMISSION_ACCESS_FINE_LOCATION);
+            } else {
+                return;
+            }
+            if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_ACCESS_COARSE_LOCATION);
+            } else {
+                return;
+            }
+        }
+        mMap.setMyLocationEnabled(true);
     }
     @Override
     public boolean onMarkerClick(Marker marker) {
