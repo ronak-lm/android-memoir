@@ -35,4 +35,8 @@
     <dimen name="edit_note_title_textSize">22sp</dimen>
     <dimen name="edit_note_body_textSize">18sp</dimen>
 
+    <!-- Login Screen -->
+    <dimen name="login_logo_width">220dp</dimen>
+    <dimen name="login_logo_margin">80dp</dimen>
+
 </resources>

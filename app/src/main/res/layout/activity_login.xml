@@ -1,26 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/large"
+    android:background="@color/primary"
     android:fitsSystemWindows="true"
     tools:context=".activity.LoginActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="@dimen/login_logo_width"
+        android:layout_marginTop="@dimen/login_logo_margin"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/login_logo"
+        tools:ignore="ContentDescription" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_centerVertical="true"
+        android:paddingTop="30dp"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+        <EditText android:id="@+id/password"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:layout_height="wrap_content"
+            android:hint="@string/login_pass_hint"
+            android:inputType="textPassword"
+            android:theme="@style/EditTextStyle"/>
 
-    </android.support.design.widget.AppBarLayout>
+        <FrameLayout android:id="@+id/login_button"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            android:background="@color/primary_dark">
 
-    <include layout="@layout/content_login" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/login_button"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
 
-</android.support.design.widget.CoordinatorLayout>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

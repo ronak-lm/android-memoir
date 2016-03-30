@@ -37,4 +37,10 @@
         <item name="android:background">?attr/background</item>
     </style>
 
+    <style name="EditTextStyle" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="colorControlActivated">@android:color/white</item>
+        <item name="colorControlHighlight">@android:color/white</item>
+    </style>
+
 </resources>

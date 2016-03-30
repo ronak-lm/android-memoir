@@ -31,5 +31,7 @@
     <string name="location_select">Select on Map</string>
     <string name="location_play_error">Error! Unable to connect to Google Play Services.</string>
     <string name="location_wait">Getting current location. Please wait&#8230;</string>
+    <string name="login_pass_hint">Password</string>
+    <string name="login_button">LOGIN</string>
 
 </resources>
