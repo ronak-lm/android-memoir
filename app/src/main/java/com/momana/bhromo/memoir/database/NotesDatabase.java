@@ -16,6 +16,7 @@ public class NotesDatabase {
 
     private static final String TABLE_NOTES = "notes_table";
     private static final String LIST_NOTES = "notes_list";
+    private static final String PASSWORD = "password";
 
     private Gson gson;
     private Context context;
@@ -86,6 +87,15 @@ public class NotesDatabase {
                 "<font style=\"font-size:24px\"><font style=\"color:#4caf50\"><b>Project Guide</b></font></font></div>" +
                 "<div align=\"center\">Mrs. Anagha Durugkar</div>"));
         return notes;
+    }
+
+    public boolean isPasswordEnabled() {
+        SharedPreferences preferences = context.getSharedPreferences(TABLE_NOTES, Context.MODE_PRIVATE);
+        return preferences.contains(PASSWORD);
+    }
+    public boolean isPasswordCorrect(String password) {
+        SharedPreferences preferences = context.getSharedPreferences(TABLE_NOTES, Context.MODE_PRIVATE);
+        return preferences.getString(PASSWORD, "").equals(password);
     }
 
     private ArrayList<Note> notes;
