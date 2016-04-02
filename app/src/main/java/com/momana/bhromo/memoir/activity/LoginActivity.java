@@ -32,8 +32,8 @@ public class LoginActivity extends AppCompatActivity {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    finish();
                     startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                    finish();
                 }
             }, 750);
         } else {
@@ -45,11 +45,16 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.login_button)
     public void onLoginButtonClicked() {
-        if (NotesDatabase.getInstance(this).isPasswordCorrect(password.getText().toString().trim())) {
-            finish();
-            startActivity(new Intent(this, MainActivity.class));
+        String pass = password.getText().toString().trim();
+        if (pass.length() == 0) {
+            Toast.makeText(getApplicationContext(), R.string.pass_error_empty, Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, R.string.login_error, Toast.LENGTH_SHORT).show();
+            if (NotesDatabase.getInstance(this).isPasswordCorrect(pass)) {
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
+            } else {
+                Toast.makeText(this, R.string.login_error, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 }

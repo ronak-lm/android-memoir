@@ -97,6 +97,16 @@ public class NotesDatabase {
         SharedPreferences preferences = context.getSharedPreferences(TABLE_NOTES, Context.MODE_PRIVATE);
         return preferences.getString(PASSWORD, "").equals(password);
     }
+    public void setPassword(String str) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(TABLE_NOTES, Context.MODE_PRIVATE).edit();
+        editor.putString(PASSWORD, str);
+        editor.apply();
+    }
+    public void removePassword() {
+        SharedPreferences.Editor editor = context.getSharedPreferences(TABLE_NOTES, Context.MODE_PRIVATE).edit();
+        editor.remove(PASSWORD);
+        editor.apply();
+    }
 
     private ArrayList<Note> notes;
     public ArrayList<Note> getNotes() {

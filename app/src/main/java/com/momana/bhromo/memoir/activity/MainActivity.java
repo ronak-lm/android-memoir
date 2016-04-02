@@ -87,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 setSelectedDrawerItem(2);
                 return true;
             case R.id.drawer_settings:
+                startActivity(new Intent(this, SettingsActivity.class));
                 return true;
             case R.id.drawer_about:
                 startActivity(new Intent(this, AboutActivity.class));
