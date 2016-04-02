@@ -37,6 +37,6 @@
 
     <string name="title_about">About</string>
     <string name="version_num">Version 1.0</string>
-    <string name="made_by">Made By</string>
+    <string name="title_settings">Settings</string>
 
 </resources>

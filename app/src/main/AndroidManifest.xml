@@ -37,6 +37,10 @@
             android:theme="@style/EditorTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
+            android:name=".activity.SettingsActivity"
+            android:label="@string/title_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
             android:name=".activity.AboutActivity"
             android:label="@string/title_about"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -45,6 +49,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/places_api_key" />
+
 
     </application>
 
