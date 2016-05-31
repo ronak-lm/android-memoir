@@ -1,9 +1,11 @@
 package com.momana.bhromo.memoir.fragment;
 
+import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -33,8 +35,8 @@ import java.util.ArrayList;
 
 public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMarkerClickListener {
 
-    public static final int PERMISSION_ACCESS_COARSE_LOCATION = 11;
-    public static final int PERMISSION_ACCESS_FINE_LOCATION = 12;
+    public static final int PERMISSION_ACCESS_FINE_LOCATION = 42;
+    public static final int PERMISSION_ACCESS_COARSE_LOCATION = 43;
 
     private ArrayList<Note> noteList;
     private MapView mMapView;
@@ -116,20 +118,20 @@ public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMar
         mMap.setOnMarkerClickListener(this);
         refreshMarkers();
 
-        // On Marshmallow request for permissions first before showing location
+        // Request for FINE_LOCATION
         if (Build.VERSION.SDK_INT >= 23) {
             if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(getActivity(), new String[] {android.Manifest.permission.ACCESS_FINE_LOCATION }, PERMISSION_ACCESS_FINE_LOCATION);
             } else {
-                return;
-            }
-            if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-                ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_ACCESS_COARSE_LOCATION);
-            } else {
-                return;
+                // Request for COARSE LOCATION
+                if (ContextCompat.checkSelfPermission(getActivity(), android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_COARSE_LOCATION}, PERMISSION_ACCESS_COARSE_LOCATION);
+                } else {
+                    // Request granted, get user's location
+                    mMap.setMyLocationEnabled(true);
+                }
             }
         }
-        mMap.setMyLocationEnabled(true);
     }
     @Override
     public boolean onMarkerClick(Marker marker) {
