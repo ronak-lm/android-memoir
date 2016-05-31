@@ -1,6 +1,6 @@
-# Memoir - Personal Diary Application
+# Memoir - Digital Diary Application
 
-Personal Diary Application - B.E. Project [2016] - Group 34 - Thadomal Shahani Engineering College
+Digital Diary Application - B.E. Project [2016] - Group 34 - Thadomal Shahani Engineering College
 
 ![screen](../master/art/screenshot.jpg)
 
