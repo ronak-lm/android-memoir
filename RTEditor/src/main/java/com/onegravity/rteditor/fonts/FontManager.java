@@ -96,12 +96,12 @@ public class FontManager {
          */
         Map<String, String> assetFonts = getAssetFonts(context);
         AssetManager assets = context.getResources().getAssets();
-        for (String fontName : assetFonts.keySet()) {
-            String filePath = assetFonts.get(fontName);
-            if (!ALL_FONTS.contains(fontName)) {
+        for (Map.Entry<String, String> entry : assetFonts.entrySet()) {
+            String filePath = entry.getValue();
+            if (!ALL_FONTS.contains(entry.getKey())) {
                 try {
                     Typeface typeface = Typeface.createFromAsset(assets, filePath);
-                    ALL_FONTS.add(new RTTypeface(fontName, typeface));
+                    ALL_FONTS.add(new RTTypeface(entry.getKey(), typeface));
                 }
                 catch (Exception e) {
                     // this can happen if we don't have access to the font or it's not a font or...
