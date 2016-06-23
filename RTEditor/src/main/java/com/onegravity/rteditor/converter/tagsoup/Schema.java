@@ -19,6 +19,7 @@ package com.onegravity.rteditor.converter.tagsoup;
 import android.annotation.SuppressLint;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Abstract class representing a TSSL schema. Actual TSSL schemas are compiled
@@ -35,8 +36,8 @@ public abstract class Schema {
     public static final int F_CDATA = 2;
     public static final int F_NOFORCE = 4;
 
-    private HashMap<String, Integer> theEntities = new HashMap<String, Integer>();
-    private HashMap<String, ElementType> theElementTypes = new HashMap<String, ElementType>();
+    private Map<String, Integer> theEntities = new HashMap<String, Integer>();
+    private Map<String, ElementType> theElementTypes = new HashMap<String, ElementType>();
 
     private String theURI = "";
     private String thePrefix = "";

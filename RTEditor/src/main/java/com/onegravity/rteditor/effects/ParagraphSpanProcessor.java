@@ -44,7 +44,7 @@ class ParagraphSpanProcessor<V extends Object> {
         }
     }
 
-    final private ArrayList<ParagraphSpan<V>> mParagraphSpans = new ArrayList<ParagraphSpan<V>>();
+    final private List<ParagraphSpan<V>> mParagraphSpans = new ArrayList<ParagraphSpan<V>>();
 
     void clear() {
         mParagraphSpans.clear();
