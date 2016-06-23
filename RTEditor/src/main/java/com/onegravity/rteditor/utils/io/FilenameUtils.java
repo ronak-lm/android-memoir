@@ -1291,7 +1291,7 @@ public class FilenameUtils {
         
         // loop around a backtrack stack, to handle complex * matching
         do {
-            if (backtrack.size() > 0) {
+            if (!backtrack.isEmpty()) {
                 int[] array = backtrack.pop();
                 wcsIdx = array[0];
                 textIdx = array[1];
@@ -1350,7 +1350,7 @@ public class FilenameUtils {
                 return true;
             }
             
-        } while (backtrack.size() > 0);
+        } while (!backtrack.isEmpty());
   
         return false;
     }

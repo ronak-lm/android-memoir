@@ -76,7 +76,7 @@ public class NotesCalendarAdapter extends RecyclerView.Adapter<RecyclerView.View
     public void refreshNotes() {
         notes = NotesDatabase.getInstance(context).getNotesOfDate(currentDate);
         notifyDataSetChanged();
-        if (notes.size() == 0) {
+        if (notes.isEmpty()) {
             SimpleDateFormat fmt = new SimpleDateFormat("dd MMM yyyy");
             Toast.makeText(context, "No notes found for " + fmt.format(currentDate), Toast.LENGTH_SHORT).show();
         }

@@ -60,7 +60,7 @@ public class NotesFragment extends Fragment implements NoteGridAdapter.OnItemCli
 
     // Helper Method
     public void refreshLayout() {
-        if (adapter.notes.size() == 0) {
+        if (adapter.notes.isEmpty()) {
             noteGrid.setVisibility(View.GONE);
             placeholderText.setVisibility(View.VISIBLE);
         } else {
