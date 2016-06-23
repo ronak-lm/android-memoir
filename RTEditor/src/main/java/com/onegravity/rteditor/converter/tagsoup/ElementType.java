@@ -252,7 +252,7 @@ public class ElementType {
             return value;
         boolean space = false;
         int len = value.length();
-        StringBuffer b = new StringBuffer(len);
+        StringBuilder b = new StringBuilder(len);
         for (int i = 0; i < len; i++) {
             char v = value.charAt(i);
             if (v == ' ') {

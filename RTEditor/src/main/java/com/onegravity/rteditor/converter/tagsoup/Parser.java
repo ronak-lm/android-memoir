@@ -930,7 +930,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
         if (src == null)
             return null;
         int len = src.length();
-        StringBuffer dst = new StringBuffer(len);
+        StringBuilder dst = new StringBuilder(len);
         boolean suppressSpace = true;
         for (int i = 0; i < len; i++) {
             char ch = src.charAt(i);
@@ -1090,7 +1090,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     // This no longer lowercases the result: we depend on Schema to
     // canonicalize case.
     private String makeName(char[] buff, int offset, int length) {
-        StringBuffer dst = new StringBuffer(length + 2);
+        StringBuilder dst = new StringBuilder(length + 2);
         boolean seenColon = false;
         boolean start = true;
         // String src = new String(buff, offset, length); // DEBUG
