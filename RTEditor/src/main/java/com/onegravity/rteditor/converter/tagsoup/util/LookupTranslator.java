@@ -20,6 +20,7 @@ package com.onegravity.rteditor.converter.tagsoup.util;
 import java.io.IOException;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Translates a value using a lookup table.
@@ -29,7 +30,7 @@ import java.util.HashMap;
  */
 public class LookupTranslator extends CharSequenceTranslator {
 
-    private final HashMap<String, CharSequence> lookupMap;
+    private final Map<String, CharSequence> lookupMap;
     private final int shortest;
     private final int longest;
 

@@ -67,6 +67,7 @@ import java.io.StringReader;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
+import java.util.Map;
 import java.util.Set;
 import java.util.Stack;
 import java.util.regex.Matcher;
@@ -903,7 +904,7 @@ public class ConverterHtmlToSpanned implements ContentHandler {
 
     // ****************************************** Color Methods *******************************************
 
-    private static HashMap<String, Integer> COLORS = new HashMap<String, Integer>();
+    private static Map<String, Integer> COLORS = new HashMap<String, Integer>();
 
     static {
         COLORS.put("aqua", 0x00FFFF);

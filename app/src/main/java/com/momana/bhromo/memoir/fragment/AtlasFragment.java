@@ -32,6 +32,7 @@ import com.momana.bhromo.memoir.database.NotesDatabase;
 import com.momana.bhromo.memoir.model.Note;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMarkerClickListener {
 
@@ -85,7 +86,7 @@ public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMar
 
         // Find notes with location
         noteList = new ArrayList<>();
-        ArrayList<Note> notes = NotesDatabase.getInstance(getContext()).getNotes();
+        List<Note> notes = NotesDatabase.getInstance(getContext()).getNotes();
         for (int i = 0; i < notes.size(); i++) {
             if (notes.get(i).location.placeName.length() != 0) {
                 noteList.add(notes.get(i));
