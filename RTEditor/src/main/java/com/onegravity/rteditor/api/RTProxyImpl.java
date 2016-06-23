@@ -108,7 +108,7 @@ public class RTProxyImpl implements RTProxy {
     }
 
     private Activity getActivity() {
-        if (mActivity == null && mActivity.get() == null) {
+        if (mActivity == null || mActivity.get() == null) {
             throw new IncorrectInitializationException(
                     "The RTApi was't initialized correctly or the Activity was released by Android (SoftReference)");
         }
