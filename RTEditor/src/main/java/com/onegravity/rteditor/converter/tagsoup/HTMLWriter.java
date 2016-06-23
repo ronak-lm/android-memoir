@@ -627,9 +627,9 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
     private boolean ignoreElement(String uri, String localName, String qName, Attributes atts) {
         Map<String, String> tagAttrs = mTags2Ignore.get(qName.toLowerCase(Locale.US));
         if (tagAttrs != null) {
-            for (String attrKey : tagAttrs.keySet()) {
-                for (String attrValue : tagAttrs.get(attrKey).split("#")) {
-                    String value = atts.getValue(attrKey);
+            for (Map.Entry<String, String> entry : tagAttrs.entrySet()) {
+                for (String attrValue : entry.getValue().split("#")) {
+                    String value = atts.getValue(entry.getKey());
                     if (!isNullOrEmpty(value) && attrValue.equalsIgnoreCase(value)) {
                         mIgnoredTags.push(qName);
                         return true;
