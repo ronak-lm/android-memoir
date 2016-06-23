@@ -94,7 +94,7 @@ public class AtlasFragment extends Fragment implements OnMapReadyCallback, OnMar
             }
         }
 
-        if (noteList.size() > 0) {
+        if (!noteList.isEmpty()) {
             // Zoom to markers
             mMap.setOnCameraChangeListener(new GoogleMap.OnCameraChangeListener() {
                 @Override
