@@ -22,7 +22,7 @@ public class Note {
         return getSimpleBody().replace("\n", " ");
     }
     public String getDayOfMonth() {
-        String dayOfMon = calendar.get(Calendar.DAY_OF_MONTH) + "";
+        String dayOfMon = Integer.toString(calendar.get(Calendar.DAY_OF_MONTH));
         if (dayOfMon.length() == 1) {
             return "0" + dayOfMon;
         } else {
@@ -37,11 +37,11 @@ public class Note {
 
     }
     public String getHourAndMin() {
-        String hour = calendar.get(Calendar.HOUR) + "";
+        String hour = Integer.toString(calendar.get(Calendar.HOUR));
         if (hour.length() == 1) {
             hour = "0" + hour;
         }
-        String min = calendar.get(Calendar.MINUTE) + "";
+        String min = Integer.toString(calendar.get(Calendar.MINUTE));
         if (min.length() == 1) {
             min = "0" + min;
         }
