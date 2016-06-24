@@ -62,7 +62,7 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      * @return The returned list, must NEVER be null.
      */
     final public List<V> valuesInSelection(RTEditText editor) {
-        List<V> result = new ArrayList<V>();
+        List<V> result = new ArrayList<>();
 
         Selection selection = getSelection(editor);
         List<RTSpan<V>> spans = getSpans(editor.getText(), selection, SpanCollectMode.SPAN_FLAGS);

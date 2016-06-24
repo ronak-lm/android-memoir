@@ -87,7 +87,7 @@ public class ConverterHtmlToSpanned implements ContentHandler {
     private Parser mParser;
     private SpannableStringBuilder mResult;
 
-    private Stack<AccumulatedParagraphStyle> mParagraphStyles = new Stack<AccumulatedParagraphStyle>();
+    private Stack<AccumulatedParagraphStyle> mParagraphStyles = new Stack<>();
 
     /**
      * If this is set to True we ignore all characters till it's set to false again.
@@ -95,7 +95,7 @@ public class ConverterHtmlToSpanned implements ContentHandler {
      */
     private boolean mIgnoreContent;
 
-    private static final Set<String> sIgnoreTags = new HashSet<String>();
+    private static final Set<String> sIgnoreTags = new HashSet<>();
 
     static {
         sIgnoreTags.add("header");
@@ -904,7 +904,7 @@ public class ConverterHtmlToSpanned implements ContentHandler {
 
     // ****************************************** Color Methods *******************************************
 
-    private static Map<String, Integer> COLORS = new HashMap<String, Integer>();
+    private static Map<String, Integer> COLORS = new HashMap<>();
 
     static {
         COLORS.put("aqua", 0x00FFFF);

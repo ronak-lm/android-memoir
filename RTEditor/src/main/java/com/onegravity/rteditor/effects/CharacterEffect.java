@@ -30,7 +30,7 @@ abstract class CharacterEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
 
     @Override
     final protected SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
-        return new CharacterSpanCollector<V>(spanClazz);
+        return new CharacterSpanCollector<>(spanClazz);
     }
 
     @Override

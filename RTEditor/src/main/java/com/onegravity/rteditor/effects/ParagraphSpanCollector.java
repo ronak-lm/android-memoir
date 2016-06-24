@@ -33,7 +33,7 @@ class ParagraphSpanCollector<V> extends SpanCollector<V> {
 
     @Override
     final protected List<RTSpan<V>> getSpans(Spannable str, Selection selection, SpanCollectMode mode) {
-        List<RTSpan<V>> result = new ArrayList<RTSpan<V>>();
+        List<RTSpan<V>> result = new ArrayList<>();
 
         RTSpan<V>[] spans = getSpansAndroid(str, selection.start(), selection.end());
         for (RTSpan<V> span : spans) {

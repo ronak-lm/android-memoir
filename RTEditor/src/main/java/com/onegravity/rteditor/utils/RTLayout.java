@@ -40,7 +40,7 @@ public class RTLayout implements Serializable {
     private static final Pattern LINEBREAK_PATTERN = Pattern.compile("\\r\\n|\\r|\\n");
 
     private int mNrOfLines = 0;
-    private final ArrayList<Paragraph> mParagraphs = new ArrayList<Paragraph>();
+    private final ArrayList<Paragraph> mParagraphs = new ArrayList<>();
 
     public RTLayout(Spanned spanned) {
         if (spanned != null) {

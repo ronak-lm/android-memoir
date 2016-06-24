@@ -44,8 +44,8 @@ class RTOperationManager {
     /*
      * The undo/redo stacks by editor Id
      */
-    private Map<Integer, Stack<Operation>> mUndoStacks = new HashMap<Integer, Stack<Operation>>();
-    private Map<Integer, Stack<Operation>> mRedoStacks = new HashMap<Integer, Stack<Operation>>();
+    private Map<Integer, Stack<Operation>> mUndoStacks = new HashMap<>();
+    private Map<Integer, Stack<Operation>> mRedoStacks = new HashMap<>();
     ;
 
     // ****************************************** Operation Classes *******************************************
@@ -203,7 +203,7 @@ class RTOperationManager {
     private Stack<Operation> getStack(Map<Integer, Stack<Operation>> stacks, RTEditText editor) {
         Stack<Operation> stack = stacks.get(editor.getId());
         if (stack == null) {
-            stack = new Stack<Operation>();
+            stack = new Stack<>();
             stacks.put(editor.getId(), stack);
         }
         return stack;

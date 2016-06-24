@@ -33,7 +33,7 @@ class CharacterSpanCollector<V> extends SpanCollector<V> {
 
     @Override
     final protected List<RTSpan<V>> getSpans(Spannable str, Selection selection, SpanCollectMode mode) {
-        List<RTSpan<V>> result = new ArrayList<RTSpan<V>>();
+        List<RTSpan<V>> result = new ArrayList<>();
 
         /*
          * Retrieving the spans using a widened selection guarantees that we get all spans

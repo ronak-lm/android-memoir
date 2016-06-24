@@ -294,17 +294,17 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
     // //////////////////////////////////////////////////////////////////
     // Tags to ignore
     // //////////////////////////////////////////////////////////////////
-    private static Map<String, Map<String, String>> mTags2Ignore = new HashMap<String, Map<String, String>>();
+    private static Map<String, Map<String, String>> mTags2Ignore = new HashMap<>();
 
     static {
         // meta refresh tag + iframe meta refresh
-        HashMap<String, String> attributes = new HashMap<String, String>();
+        HashMap<String, String> attributes = new HashMap<>();
         attributes.put("http-equiv", "Refresh");
         mTags2Ignore.put("meta", attributes);
         mTags2Ignore.put("iframe", attributes);
 
         // video, audio tags with autoplay
-        attributes = new HashMap<String, String>();
+        attributes = new HashMap<>();
         attributes.put("autoplay", "autoplay#true");
         mTags2Ignore.put("audio", attributes);
         mTags2Ignore.put("video", attributes);
@@ -362,16 +362,16 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      */
     public HTMLWriter(boolean omitXHTMLNamespace) {
         nsSupport = new NamespaceSupport();
-        prefixTable = new Hashtable<String, String>();
-        forcedDeclTable = new Hashtable<String, Boolean>();
-        doneDeclTable = new Hashtable<String, String>();
+        prefixTable = new Hashtable<>();
+        forcedDeclTable = new Hashtable<>();
+        doneDeclTable = new Hashtable<>();
         outputProperties = new Properties();
 
         // we always generate HTML code...
         setOutputProperty(METHOD, "html");
         setOutputProperty(OMIT_XML_DECLARATION, "yes");
         mOmitXHTMLNamespace = omitXHTMLNamespace;
-        mIgnoredTags = new Stack<String>();
+        mIgnoredTags = new Stack<>();
     }
 
     // //////////////////////////////////////////////////////////////////

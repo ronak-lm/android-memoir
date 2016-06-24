@@ -44,7 +44,7 @@ class ParagraphSpanProcessor<V extends Object> {
         }
     }
 
-    final private List<ParagraphSpan<V>> mParagraphSpans = new ArrayList<ParagraphSpan<V>>();
+    final private List<ParagraphSpan<V>> mParagraphSpans = new ArrayList<>();
 
     void clear() {
         mParagraphSpans.clear();
@@ -58,12 +58,12 @@ class ParagraphSpanProcessor<V extends Object> {
 
     void removeSpan(RTSpan<V> span, Paragraph paragraph) {
         if (span instanceof RTParagraphSpan) {
-            mParagraphSpans.add(new ParagraphSpan<V>((RTParagraphSpan<V>) span, paragraph, true));
+            mParagraphSpans.add(new ParagraphSpan<>((RTParagraphSpan<V>) span, paragraph, true));
         }
     }
 
     void addSpan(RTParagraphSpan<V> span, Paragraph paragraph) {
-        mParagraphSpans.add( new ParagraphSpan<V>(span, paragraph, false) );
+        mParagraphSpans.add(new ParagraphSpan<>(span, paragraph, false) );
     }
 
     void process(Spannable str) {
