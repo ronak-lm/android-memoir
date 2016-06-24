@@ -379,20 +379,18 @@ public class ConverterHtmlToSpanned implements ContentHandler {
         int start = mResult.getSpanStart(obj);
 
         mResult.removeSpan(obj);
-        if (start != end) {
-            if (!checkDuplicateSpan(mResult, start, AlignmentSpan.class)) {
-                Div divObj = (Div) obj;
-                Layout.Alignment align = divObj.mAlign.equalsIgnoreCase("center") ? Layout.Alignment.ALIGN_CENTER :
-                        divObj.mAlign.equalsIgnoreCase("right") ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL;
-                if (align != null) {
-                    if (mResult.charAt(end - 1) != '\n') {
-                        // yes we need that linefeed, or we will get crashes
-                        mResult.append('\n');
-                    }
-                    // use SPAN_EXCLUSIVE_EXCLUSIVE here, will be replaced later anyway when the cleanup function is called
-                    boolean isRTL = Helper.isRTL(mResult, start, end);
-                    mResult.setSpan(new AlignmentSpan(align, isRTL), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        if (start != end && !checkDuplicateSpan(mResult, start, AlignmentSpan.class)) {
+            Div divObj = (Div) obj;
+            Layout.Alignment align = divObj.mAlign.equalsIgnoreCase("center") ? Layout.Alignment.ALIGN_CENTER :
+                    divObj.mAlign.equalsIgnoreCase("right") ? Layout.Alignment.ALIGN_OPPOSITE : Layout.Alignment.ALIGN_NORMAL;
+            if (align != null) {
+                if (mResult.charAt(end - 1) != '\n') {
+                    // yes we need that linefeed, or we will get crashes
+                    mResult.append('\n');
                 }
+                // use SPAN_EXCLUSIVE_EXCLUSIVE here, will be replaced later anyway when the cleanup function is called
+                boolean isRTL = Helper.isRTL(mResult, start, end);
+                mResult.setSpan(new AlignmentSpan(align, isRTL), start, end, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
         }
     }
