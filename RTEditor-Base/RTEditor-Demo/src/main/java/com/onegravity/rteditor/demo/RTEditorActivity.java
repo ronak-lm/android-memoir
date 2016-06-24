@@ -139,7 +139,8 @@ public class RTEditorActivity extends RTEditorBaseActivity {
         mRTManager.onSaveInstanceState(outState);
 
         String subject = mSubjectField.getText().toString();
-        if (subject != null) outState.putString(PARAM_SUBJECT, subject);
+        if (subject != null) 
+            outState.putString(PARAM_SUBJECT, subject);
 
         outState.putBoolean(PARAM_DARK_THEME, mUseDarkTheme);
         outState.putBoolean(PARAM_SPLIT_TOOLBAR, mSplitToolbar);
@@ -227,7 +228,8 @@ public class RTEditorActivity extends RTEditorBaseActivity {
         item.setTitle(mSplitToolbar ? R.string.menu_single_toolbar : R.string.menu_split_toolbar);
 
         item = menu.findItem(R.id.editor_activity);
-        if (item != null) item.setVisible(false);
+        if (item != null) 
+            item.setVisible(false);
 
         return true;
     }

@@ -153,7 +153,8 @@ public class ColorPickerPreferenceWidget extends ImageView {
                 }
                 if (widgetView == null) {
                     // remove already created preview image and create new one
-                    if (count > 0) widgetFrameView.removeViews(0, count);
+                    if (count > 0) 
+                        widgetFrameView.removeViews(0, count);
                     widgetView = new ColorPickerPreferenceWidget(context);
                     widgetView.setTag(IMAGE_VIEW_TAG);
                     widgetFrameView.setVisibility(View.VISIBLE);

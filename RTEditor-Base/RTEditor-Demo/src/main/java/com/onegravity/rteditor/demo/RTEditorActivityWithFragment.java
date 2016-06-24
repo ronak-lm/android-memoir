@@ -132,17 +132,20 @@ public class RTEditorActivityWithFragment extends RTEditorBaseActivity {
                 if (filePath.contains("subject_")) {
                     // load subject
                     String s = FileHelper.load(this, filePath);
-                    if (mFragment != null) mFragment.setSignature(s);
+                    if (mFragment != null) 
+                        mFragment.setSignature(s);
 
                     // load message
                     filePath = filePath.replace("subject_", "message_");
                     s = FileHelper.load(this, filePath);
-                    if (mFragment != null) mFragment.setMessage(s);
+                    if (mFragment != null) 
+                        mFragment.setMessage(s);
 
                     // load signature
                     filePath = filePath.replace("message_", "signature_");
                     s = FileHelper.load(this, filePath);
-                    if (mFragment != null) mFragment.setSignature(s);
+                    if (mFragment != null) 
+                        mFragment.setSignature(s);
                 } else {
                     Toast.makeText(this, R.string.load_failure_1, Toast.LENGTH_LONG).show();
                 }
@@ -169,7 +172,8 @@ public class RTEditorActivityWithFragment extends RTEditorBaseActivity {
         item.setTitle(mSplitToolbar ? R.string.menu_single_toolbar : R.string.menu_split_toolbar);
 
         item = menu.findItem(R.id.editor_fragment);
-        if (item != null) item.setVisible(false);
+        if (item != null) 
+            item.setVisible(false);
 
         return true;
     }

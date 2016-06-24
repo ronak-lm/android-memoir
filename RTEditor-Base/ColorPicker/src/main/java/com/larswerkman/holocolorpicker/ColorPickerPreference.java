@@ -118,7 +118,8 @@ public class ColorPickerPreference extends Preference implements
     @Override
     public void onActivityDestroy() {
         try {
-            if (mPicker != null) mPicker.dismiss();
+            if (mPicker != null) 
+                mPicker.dismiss();
         } catch (Exception e) {
         }
     }
