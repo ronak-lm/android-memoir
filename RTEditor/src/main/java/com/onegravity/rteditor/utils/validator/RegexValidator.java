@@ -158,7 +158,7 @@ public class RegexValidator implements Serializable {
      */
     public String[] match(String value) {
         if (value == null) {
-            return null;
+            return new String[0];
         }
         for (int i = 0; i < patterns.length; i++) {
             Matcher matcher = patterns[i].matcher(value);
@@ -171,7 +171,7 @@ public class RegexValidator implements Serializable {
                 return groups;
             }
         }
-        return null;
+        return new String[0];
     }
 
 
