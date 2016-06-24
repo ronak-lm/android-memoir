@@ -471,7 +471,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      * @see #setPrefix
      */
     public String getPrefix(String uri) {
-        return (String) prefixTable.get(uri);
+        return prefixTable.get(uri);
     }
 
     /**
@@ -781,7 +781,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
     private void forceNSDecls() {
         Enumeration<String> prefixes = forcedDeclTable.keys();
         while (prefixes.hasMoreElements()) {
-            String prefix = (String) prefixes.nextElement();
+            String prefix = prefixes.nextElement();
             doPrefix(prefix, null, true);
         }
     }
@@ -812,14 +812,14 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
         if (prefix != null) {
             return prefix;
         }
-        prefix = (String) doneDeclTable.get(uri);
+        prefix = doneDeclTable.get(uri);
         if (prefix != null
                 && ((!isElement || defaultNS != null) && "".equals(prefix) || nsSupport
                 .getURI(prefix) != null)) {
             prefix = null;
         }
         if (prefix == null) {
-            prefix = (String) prefixTable.get(uri);
+            prefix = prefixTable.get(uri);
             if (prefix != null
                     && ((!isElement || defaultNS != null) && "".equals(prefix) || nsSupport
                     .getURI(prefix) != null)) {
@@ -949,7 +949,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
     private void writeNSDecls() throws SAXException {
         Enumeration<String> prefixes = (Enumeration<String>) nsSupport.getDeclaredPrefixes();
         while (prefixes.hasMoreElements()) {
-            String prefix = (String) prefixes.nextElement();
+            String prefix = prefixes.nextElement();
             String uri = nsSupport.getURI(prefix);
             if (uri == null) {
                 uri = "";
