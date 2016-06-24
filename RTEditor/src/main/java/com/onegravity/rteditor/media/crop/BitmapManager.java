@@ -39,7 +39,7 @@ import android.graphics.BitmapFactory;
  */
 public class BitmapManager {
 
-    private static enum State {
+    private enum State {
         CANCEL, ALLOW
     }
 
