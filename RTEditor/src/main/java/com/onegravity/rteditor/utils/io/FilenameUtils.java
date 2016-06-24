@@ -122,9 +122,9 @@ public class FilenameUtils {
     }
 
     /**
-     * Instances should NOT be constructed in standard programming.
+     * Prevents class instantiation.
      */
-    public FilenameUtils() {
+    private FilenameUtils() {
         super();
     }
 

@@ -70,6 +70,12 @@ public class FontManager {
     };
 
     /**
+     * Prevents class instantiation.
+     */
+    private FontManager() {
+    }
+
+    /**
      * Use this method to preload fonts asynchronously e.g. when the app starts up.
      */
     public static void preLoadFonts(final Context context) {

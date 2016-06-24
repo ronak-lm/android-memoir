@@ -147,9 +147,9 @@ public class IOUtils {
     private static byte[] SKIP_BYTE_BUFFER;
 
     /**
-     * Instances should NOT be constructed in standard programming.
+     * Prevents class instantiation.
      */
-    public IOUtils() {
+    private IOUtils() {
         super();
     }
 
