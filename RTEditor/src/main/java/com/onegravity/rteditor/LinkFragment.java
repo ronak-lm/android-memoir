@@ -121,7 +121,7 @@ public class LinkFragment extends DialogFragment {
     @Override
     public final void onAttach(Activity activity) {
         super.onAttach(activity);
-        mActivity = new SoftReference<Activity>(activity);
+        mActivity = new SoftReference<>(activity);
     }
 
     @Override

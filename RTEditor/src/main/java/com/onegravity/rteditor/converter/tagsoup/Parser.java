@@ -262,7 +262,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
     // the corresponding instance variables, but care must be taken
     // to keep them in sync.
 
-    private HashMap<String, Boolean> theFeatures = new HashMap<String, Boolean>();
+    private HashMap<String, Boolean> theFeatures = new HashMap<>();
 
     {
         theFeatures.put(namespacesFeature, truthValue(DEFAULT_NAMESPACES));
@@ -891,7 +891,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
         if (val.length() == 0) {
             return new String[0];
         } else {
-            ArrayList<String> l = new ArrayList<String>();
+            ArrayList<String> l = new ArrayList<>();
             int s = 0;
             int e;
             boolean sq = false; // single quote

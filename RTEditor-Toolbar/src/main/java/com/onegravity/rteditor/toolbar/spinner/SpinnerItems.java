@@ -25,7 +25,7 @@ import java.util.List;
  */
 public class SpinnerItems<T extends SpinnerItem> {
 
-    private List<T> mItems = new ArrayList<T>();
+    private List<T> mItems = new ArrayList<>();
     private int mSelectedItem = -1;
 
     /**
@@ -73,7 +73,7 @@ public class SpinnerItems<T extends SpinnerItem> {
 
     // lazy initialization
     private synchronized List<T> getItemsInternal() {
-        if (mItems == null) mItems = new ArrayList<T>();
+        if (mItems == null) mItems = new ArrayList<>();
         return mItems;
     }
 }

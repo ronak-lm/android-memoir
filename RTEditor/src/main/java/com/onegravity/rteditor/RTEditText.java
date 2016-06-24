@@ -103,8 +103,8 @@ public class RTEditText extends EditText implements TextWatcher, SpanWatcher, Li
     private Spannable mOldSpannable;    // undo/redo
 
     // we need to keep track of the media for this editor to be able to clean up after we're done
-    private Set<RTMedia> mOriginalMedia = new HashSet<RTMedia>();
-    private Set<RTMedia> mAddedMedia = new HashSet<RTMedia>();
+    private Set<RTMedia> mOriginalMedia = new HashSet<>();
+    private Set<RTMedia> mAddedMedia = new HashSet<>();
 
     // ****************************************** Lifecycle Methods *******************************************
 
@@ -138,7 +138,7 @@ public class RTEditText extends EditText implements TextWatcher, SpanWatcher, Li
         // - when dismissing the text delete the MediaSpan if it was deleted and not saved before
 
         // collect all media the editor contains currently
-        Set<RTMedia> mCurrentMedia = new HashSet<RTMedia>();
+        Set<RTMedia> mCurrentMedia = new HashSet<>();
         Spannable text = getText();
         for (MediaSpan span : text.getSpans(0, text.length(), MediaSpan.class)) {
             mCurrentMedia.add(span.getMedia());
@@ -293,7 +293,7 @@ public class RTEditText extends EditText implements TextWatcher, SpanWatcher, Li
         }
 
         RTText rtText = useRTFormatting ?
-                new RTHtml<RTImage, RTAudio, RTVideo>(RTFormat.HTML, content) :
+                new RTHtml<>(RTFormat.HTML, content) :
                 new RTPlainText(content);
 
         setText(rtText);

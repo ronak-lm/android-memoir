@@ -36,7 +36,7 @@ import java.util.List;
  */
 abstract class AssetIndex {
 
-    private static final List<String> mAssetIndex = new ArrayList<String>();
+    private static final List<String> mAssetIndex = new ArrayList<>();
 
     static List<String> getAssetIndex(Context context) {
         if (mAssetIndex.isEmpty()) {

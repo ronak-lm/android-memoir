@@ -36,8 +36,8 @@ public abstract class Schema {
     public static final int F_CDATA = 2;
     public static final int F_NOFORCE = 4;
 
-    private Map<String, Integer> theEntities = new HashMap<String, Integer>();
-    private Map<String, ElementType> theElementTypes = new HashMap<String, ElementType>();
+    private Map<String, Integer> theEntities = new HashMap<>();
+    private Map<String, ElementType> theElementTypes = new HashMap<>();
 
     private String theURI = "";
     private String thePrefix = "";

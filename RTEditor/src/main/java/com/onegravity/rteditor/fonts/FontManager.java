@@ -39,9 +39,9 @@ public class FontManager {
 
     private static final String[] FONT_DIRS = {"/system/fonts", "/system/font", "/data/fonts"};
 
-    private static final Map<String, String> ASSET_FONTS_BY_NAME = new TreeMap<String, String>();
-    private static final Map<String, String> SYSTEM_FONTS_BY_PATH = new TreeMap<String, String>();
-    private static final Map<String, String> SYSTEM_FONTS_BY_NAME = new TreeMap<String, String>();
+    private static final Map<String, String> ASSET_FONTS_BY_NAME = new TreeMap<>();
+    private static final Map<String, String> SYSTEM_FONTS_BY_PATH = new TreeMap<>();
+    private static final Map<String, String> SYSTEM_FONTS_BY_NAME = new TreeMap<>();
 
     /*
      * Don't load the same font more than once -> cache them here.
@@ -182,7 +182,7 @@ public class FontManager {
     }
 
     private static Collection<String> listFontFiles(Resources res) {
-        Collection<String> fonts = new ArrayList<String>();
+        Collection<String> fonts = new ArrayList<>();
         listFontFiles(res.getAssets(), fonts, "");
         return fonts;
     }

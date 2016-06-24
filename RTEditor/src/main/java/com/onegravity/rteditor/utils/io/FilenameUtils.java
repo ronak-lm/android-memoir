@@ -1287,7 +1287,7 @@ public class FilenameUtils {
         boolean anyChars = false;
         int textIdx = 0;
         int wcsIdx = 0;
-        Stack<int[]> backtrack = new Stack<int[]>();
+        Stack<int[]> backtrack = new Stack<>();
         
         // loop around a backtrack stack, to handle complex * matching
         do {
@@ -1372,7 +1372,7 @@ public class FilenameUtils {
         }
 
         char[] array = text.toCharArray();
-        ArrayList<String> list = new ArrayList<String>();
+        ArrayList<String> list = new ArrayList<>();
         StringBuilder buffer = new StringBuilder();
         for (int i = 0; i < array.length; i++) {
             if (array[i] == '?' || array[i] == '*') {

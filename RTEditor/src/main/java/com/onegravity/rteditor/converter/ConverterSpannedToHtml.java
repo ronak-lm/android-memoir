@@ -71,7 +71,7 @@ public class ConverterSpannedToHtml {
     private Spanned mText;
     private RTFormat mRTFormat;
     private List<RTImage> mImages;
-    private Stack<AccumulatedParagraphStyle> mParagraphStyles = new Stack<AccumulatedParagraphStyle>();
+    private Stack<AccumulatedParagraphStyle> mParagraphStyles = new Stack<>();
 
     /**
      * Converts a spanned text to HTML
@@ -81,13 +81,13 @@ public class ConverterSpannedToHtml {
         mRTFormat = rtFormat;
 
         mOut = new StringBuilder();
-        mImages = new ArrayList<RTImage>();
+        mImages = new ArrayList<>();
         mParagraphStyles.clear();
 
         // convert paragraphs
         convertParagraphs();
 
-        return new RTHtml<RTImage, RTAudio, RTVideo>(rtFormat, mOut.toString(), mImages);
+        return new RTHtml<>(rtFormat, mOut.toString(), mImages);
     }
 
     // ****************************************** Process Paragraphs *******************************************
@@ -170,7 +170,7 @@ public class ConverterSpannedToHtml {
     }
 
     private Set<SingleParagraphStyle> getParagraphStyles(final Spanned text, Selection selection) {
-        Set<SingleParagraphStyle> styles = new HashSet<SingleParagraphStyle>();
+        Set<SingleParagraphStyle> styles = new HashSet<>();
 
         for (ParagraphStyle style : text.getSpans(selection.start(), selection.end(), ParagraphStyle.class)) {
             ParagraphType type = ParagraphType.getInstance(style);
@@ -232,7 +232,7 @@ public class ConverterSpannedToHtml {
      */
     private void withinParagraph(final Spanned text, int start, int end) {
         // create sorted set of CharacterStyles
-        SortedSet<CharacterStyle> sortedSpans = new TreeSet<CharacterStyle>(new Comparator<CharacterStyle>() {
+        SortedSet<CharacterStyle> sortedSpans = new TreeSet<>(new Comparator<CharacterStyle>() {
             @Override
             public int compare(CharacterStyle s1, CharacterStyle s2) {
                 int start1 = text.getSpanStart(s1);

@@ -220,12 +220,12 @@ public class HorizontalRTToolbar extends LinearLayout implements RTToolbar, View
             spinnerItems.add(new FontSpinnerItem(typeface));
         }*/
 
-        SpinnerItems<FontSpinnerItem> spinnerItems = new SpinnerItems<FontSpinnerItem>();
+        SpinnerItems<FontSpinnerItem> spinnerItems = new SpinnerItems<>();
         return spinnerItems;
     }
 
     private SpinnerItems<FontSizeSpinnerItem> getTextSizeItems() {
-        SpinnerItems<FontSizeSpinnerItem> spinnerItems = new SpinnerItems<FontSizeSpinnerItem>();
+        SpinnerItems<FontSizeSpinnerItem> spinnerItems = new SpinnerItems<>();
         Resources res = getResources();
 
         // empty size
@@ -242,7 +242,7 @@ public class HorizontalRTToolbar extends LinearLayout implements RTToolbar, View
     }
 
     private SpinnerItems<FontColorSpinnerItem> getFontColorItems() {
-        SpinnerItems<FontColorSpinnerItem> spinnerItems = new SpinnerItems<FontColorSpinnerItem>();
+        SpinnerItems<FontColorSpinnerItem> spinnerItems = new SpinnerItems<>();
         Context context = getContext();
 
         // empty color
@@ -262,7 +262,7 @@ public class HorizontalRTToolbar extends LinearLayout implements RTToolbar, View
     }
 
     private SpinnerItems<BGColorSpinnerItem> getBGColorItems() {
-        SpinnerItems<BGColorSpinnerItem> spinnerItems = new SpinnerItems<BGColorSpinnerItem>();
+        SpinnerItems<BGColorSpinnerItem> spinnerItems = new SpinnerItems<>();
         Context context = getContext();
 
         // empty color
@@ -288,7 +288,7 @@ public class HorizontalRTToolbar extends LinearLayout implements RTToolbar, View
             Context context = getContext();
 
             // create custom adapter
-            final SpinnerItemAdapter<T> dropDownNavAdapter = new SpinnerItemAdapter<T>(context, spinnerItems, spinnerId, spinnerItemId);
+            final SpinnerItemAdapter<T> dropDownNavAdapter = new SpinnerItemAdapter<>(context, spinnerItems, spinnerId, spinnerItemId);
 
             // configure spinner
             spinner.setPadding(spinner.getPaddingLeft(), 0, spinner.getPaddingRight(), 0);

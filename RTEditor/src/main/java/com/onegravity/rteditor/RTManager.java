@@ -177,8 +177,8 @@ public class RTManager implements RTToolbarListener, RTEditTextListener {
         mRTApi = rtApi;
 
         mHandler = new Handler();
-        mEditors = new ConcurrentHashMap<Integer, RTEditText>();
-        mToolbars = new ConcurrentHashMap<Integer, RTToolbar>();
+        mEditors = new ConcurrentHashMap<>();
+        mToolbars = new ConcurrentHashMap<>();
         mOPManager = new RTOperationManager();
 
         if (savedInstanceState != null) {

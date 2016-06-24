@@ -34,7 +34,7 @@ abstract class ParagraphEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
 
     @Override
     final protected SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
-        return new ParagraphSpanCollector<V>(spanClazz);
+        return new ParagraphSpanCollector<>(spanClazz);
     }
 
     /**

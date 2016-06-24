@@ -39,7 +39,7 @@ public class RTProxyImpl implements RTProxy {
     final private SoftReference<Activity> mActivity;
 
     public RTProxyImpl(Activity activity) {
-        mActivity = new SoftReference<Activity>(activity);
+        mActivity = new SoftReference<>(activity);
     }
 
     @Override

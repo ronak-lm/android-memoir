@@ -31,7 +31,7 @@ public class MonitoredActivity extends AppCompatActivity {
 
     protected Handler mHandler;
 
-    private final ArrayList<LifeCycleListener> mListeners = new ArrayList<LifeCycleListener>();
+    private final ArrayList<LifeCycleListener> mListeners = new ArrayList<>();
 
     // ****************************************** MonitoredActivity Methods *******************************************
 
@@ -164,7 +164,7 @@ public class MonitoredActivity extends AppCompatActivity {
         // make the progress dialog uncancelable, so that we can guarantee
         // that the thread is done before the activity gets destroyed
         ProgressDialog dialog = ProgressDialog.show(this, null, getString(msgId), true, false);
-        Job<T> managedJob = new Job<T>(job, dialog);
+        Job<T> managedJob = new Job<>(job, dialog);
         return managedJob.runForegroundJob();
     }
 
@@ -178,7 +178,7 @@ public class MonitoredActivity extends AppCompatActivity {
         // make the progress dialog uncancelable, so that we can guarantee
         // that the thread is done before the activity gets destroyed
         ProgressDialog dialog = ProgressDialog.show(this, null, getString(msgId), true, false);
-        Job<Object> managedJob = new Job<Object>(runnable, dialog);
+        Job<Object> managedJob = new Job<>(runnable, dialog);
         managedJob.runBackgroundJob();
     }
 
