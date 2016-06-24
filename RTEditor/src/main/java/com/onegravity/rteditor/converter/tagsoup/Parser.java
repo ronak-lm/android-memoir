@@ -453,6 +453,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
         if (theScanner == null) theScanner = new HTMLScanner();
         if (theAutoDetector == null) {
             theAutoDetector = new AutoDetector() {
+                @Override
                 public Reader autoDetectingReader(InputStream i) {
                     return new InputStreamReader(i);
                 }

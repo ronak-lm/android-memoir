@@ -119,6 +119,7 @@ public abstract class MediaProcessor implements Runnable {
             URL url = new URL(sourceFile);
             final HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             in = new BufferedInputStream(urlConnection.getInputStream()) {
+                @Override
                 public void close() throws IOException {
                     super.close();
                     urlConnection.disconnect();

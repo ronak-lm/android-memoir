@@ -84,6 +84,7 @@ public class LineIterator implements Iterator<String> {
      * @return {@code true} if the Reader has more lines
      * @throws IllegalStateException if an IO exception occurs
      */
+    @Override
     public boolean hasNext() {
         if (cachedLine != null) {
             return true;
@@ -124,6 +125,7 @@ public class LineIterator implements Iterator<String> {
      * @return the next line from the input
      * @throws NoSuchElementException if there is no line to return
      */
+    @Override
     public String next() {
         return nextLine();
     }
@@ -161,6 +163,7 @@ public class LineIterator implements Iterator<String> {
      *
      * @throws UnsupportedOperationException always
      */
+    @Override
     public void remove() {
         throw new UnsupportedOperationException("Remove unsupported on LineIterator");
     }

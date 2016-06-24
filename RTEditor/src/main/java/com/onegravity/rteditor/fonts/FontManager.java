@@ -50,6 +50,7 @@ public class FontManager {
         /**
          * @return The RTTypeface with the specified name or false if no such RTTypeface exists.
          */
+        @Override
         RTTypeface get(String fontName) {
             for (RTTypeface typeface : this) {
                 if (typeface.getName().equals(fontName)) {
@@ -62,6 +63,7 @@ public class FontManager {
         /**
          * @return True if the collections contains an RTTypeface with the specified name, false otherwise.
          */
+        @Override
         boolean contains(String fontName) {
             return get(fontName) != null;
         }

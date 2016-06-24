@@ -77,6 +77,7 @@ public class BitmapManager {
             mWeakCollection.remove(t);
         }
 
+        @Override
         public Iterator<Thread> iterator() {
 
             return mWeakCollection.keySet().iterator();

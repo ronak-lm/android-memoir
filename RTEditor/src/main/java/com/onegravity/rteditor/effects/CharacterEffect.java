@@ -45,6 +45,7 @@ abstract class CharacterEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
      * @param editor The editor to apply the effect to (current selection)
      * @param value  The value to apply (depends on the Effect)
      */
+    @Override
     public void applyToSelection(RTEditText editor, V value) {
         Selection selection = getSelection(editor);
         // SPAN_INCLUSIVE_INCLUSIVE is default for empty spans
