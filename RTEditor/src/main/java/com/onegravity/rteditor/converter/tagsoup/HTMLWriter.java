@@ -529,6 +529,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      *                                  handler further down the filter chain raises an exception.
      * @see org.xml.sax.ContentHandler#startDocument
      */
+    @Override
     public void startDocument() throws SAXException {
         writeText4Links();
         reset();
@@ -567,6 +568,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      *                                  further down the filter chain raises an exception.
      * @see org.xml.sax.ContentHandler#endDocument
      */
+    @Override
     public void endDocument() throws SAXException {
         writeText4Links();
         write('\n');
@@ -1092,6 +1094,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
     private static final String[] LINK_SCHEMAS = new String[]{"http://", "https://", "rtsp://"};
 
     private static final MatchFilter URL_MATCH_FILTER = new MatchFilter() {
+        @Override
         public final boolean acceptMatch(CharSequence s, int start, int end) {
             return start == 0 || s.charAt(start - 1) != '@';
         }

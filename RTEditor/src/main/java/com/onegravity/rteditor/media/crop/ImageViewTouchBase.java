@@ -153,6 +153,7 @@ abstract class ImageViewTouchBase extends ImageView {
 
         if (viewWidth <= 0) {
             mOnLayoutRunnable = new Runnable() {
+                @Override
                 public void run() {
 
                     setImageRotateBitmapResetBase(bitmap, resetSupp);
@@ -319,6 +320,7 @@ abstract class ImageViewTouchBase extends ImageView {
         final long startTime = System.currentTimeMillis();
 
         mHandler.post(new Runnable() {
+            @Override
             public void run() {
 
                 long now = System.currentTimeMillis();

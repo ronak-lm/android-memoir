@@ -247,6 +247,7 @@ public class CropImageActivity extends MonitoredActivity {
         mImageView.setImageBitmapResetBase(mBitmap, true);
 
         startBackgroundJob(R.string.rte_processing_image, new Runnable() {
+            @Override
             public void run() {
                 final Bitmap b = mBitmap;
                 if (b != mBitmap && b != null) {
@@ -370,6 +371,7 @@ public class CropImageActivity extends MonitoredActivity {
         } else {
             final Bitmap b = croppedImage;
             startBackgroundJob(R.string.rte_processing_image, new Runnable() {
+                @Override
                 public void run() {
                     saveOutput(b);
                 }
@@ -536,6 +538,7 @@ public class CropImageActivity extends MonitoredActivity {
                     mBitmap.getHeight(), matrix, true);
         }
 
+        @Override
         public void run() {
 
             mImageMatrix = mImageView.getImageMatrix();
@@ -553,6 +556,7 @@ public class CropImageActivity extends MonitoredActivity {
             }
 
             mHandler.post(new Runnable() {
+                @Override
                 public void run() {
                     mWaitingToPick = mNumFaces > 1;
                     if (mNumFaces > 0) {

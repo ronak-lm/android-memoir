@@ -199,18 +199,22 @@ public class HTMLScanner implements Scanner, Locator {
 
     // Locator implementation
 
+    @Override
     public int getLineNumber() {
         return theLastLine;
     }
 
+    @Override
     public int getColumnNumber() {
         return theLastColumn;
     }
 
+    @Override
     public String getPublicId() {
         return thePublicid;
     }
 
+    @Override
     public String getSystemId() {
         return theSystemid;
     }
@@ -224,6 +228,7 @@ public class HTMLScanner implements Scanner, Locator {
      * @param publicid Public id
      */
 
+    @Override
     public void resetDocumentLocator(String publicid, String systemid) {
         thePublicid = publicid;
         theSystemid = systemid;
@@ -236,6 +241,7 @@ public class HTMLScanner implements Scanner, Locator {
      * @param r0 Reader that provides characters
      * @param h  ScanHandler that accepts lexical events.
      */
+    @Override
     public void scan(Reader r0, ScanHandler h) throws IOException, SAXException {
         theState = S_PCDATA;
         PushbackReader r;
@@ -530,6 +536,7 @@ public class HTMLScanner implements Scanner, Locator {
      * CDATA content (no markup is recognized except the end of element.
      */
 
+    @Override
     public void startCDATA() {
         theNextState = S_CDATA;
     }

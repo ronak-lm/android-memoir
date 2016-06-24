@@ -116,6 +116,7 @@ public class ClonedSpannableString extends SpannableString {
         }
     }
 
+    @Override
     public int getSpanStart(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
@@ -130,6 +131,7 @@ public class ClonedSpannableString extends SpannableString {
         return -1;
     }
 
+    @Override
     public int getSpanEnd(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
@@ -144,6 +146,7 @@ public class ClonedSpannableString extends SpannableString {
         return -1;
     }
 
+    @Override
     public int getSpanFlags(Object what) {
         int count = mSpanCount;
         Object[] spans = mSpans;
@@ -158,6 +161,7 @@ public class ClonedSpannableString extends SpannableString {
         return 0;
     }
 
+    @Override
     @SuppressWarnings("unchecked")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
         int count = 0;
@@ -239,6 +243,7 @@ public class ClonedSpannableString extends SpannableString {
         return (T[]) nret;
     }
 
+    @Override
     @SuppressWarnings("rawtypes")
     public int nextSpanTransition(int start, int limit, Class kind) {
         int count = mSpanCount;

@@ -50,21 +50,27 @@ public class MonitoredActivity extends AppCompatActivity {
     }
 
     public static class LifeCycleAdapter implements LifeCycleListener {
+        @Override
         public void onActivityCreated(Activity activity) {
         }
 
+        @Override
         public void onActivityDestroyed(Activity activity) {
         }
 
+        @Override
         public void onActivityPaused(Activity activity) {
         }
 
+        @Override
         public void onActivityResumed(Activity activity) {
         }
 
+        @Override
         public void onActivityStarted(Activity activity) {
         }
 
+        @Override
         public void onActivityStopped(Activity activity) {
         }
     }
@@ -187,6 +193,7 @@ public class MonitoredActivity extends AppCompatActivity {
         private final ForegroundJob<T> mJob;
 
         private final Runnable mCleanupRunner = new Runnable() {
+            @Override
             public void run() {
                 removeLifeCycleListener(Job.this);
                 if (mDialog.getWindow() != null) {

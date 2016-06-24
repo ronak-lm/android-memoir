@@ -27,5 +27,6 @@ public interface TTFInputStream extends Closeable {
     public int read (byte[] b) throws IOException;
     public int read () throws IOException;
     public void seek(long pos) throws IOException;
+    @Override
     public void close() throws IOException;
 }
