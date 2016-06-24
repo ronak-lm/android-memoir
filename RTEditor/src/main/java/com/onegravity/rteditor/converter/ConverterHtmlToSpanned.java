@@ -624,7 +624,7 @@ public class ConverterHtmlToSpanned implements ContentHandler {
         int size = Integer.MIN_VALUE;
         String fgColor = null;
         String bgColor = null;
-        String fontName = null;
+        String fontName;
 
         String style = attributes.getValue("", "style");
         if (style != null) {

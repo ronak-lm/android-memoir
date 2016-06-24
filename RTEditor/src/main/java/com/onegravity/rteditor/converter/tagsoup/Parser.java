@@ -892,7 +892,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
         } else {
             ArrayList<String> l = new ArrayList<String>();
             int s = 0;
-            int e = 0;
+            int e;
             boolean sq = false; // single quote
             boolean dq = false; // double quote
             char lastc = 0;

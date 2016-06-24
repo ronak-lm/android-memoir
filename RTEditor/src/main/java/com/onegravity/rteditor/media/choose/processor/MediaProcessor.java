@@ -74,7 +74,7 @@ public abstract class MediaProcessor implements Runnable {
     protected abstract void processMedia() throws IOException, Exception;
 
     protected InputStream getInputStream() throws IOException, Exception {
-        InputStream in = null;
+        InputStream in;
         if (mOriginalFile.startsWith("http")) {
             // http download
             in = downloadFile(mOriginalFile);
