@@ -93,10 +93,12 @@ public class AlphaPatternDrawable extends Drawable {
      */
     private void generatePatternBitmap() {
 
-        if (getBounds().width() <= 0 || getBounds().height() <= 0) return;
+        if (getBounds().width() <= 0 || getBounds().height() <= 0) 
+            return;
 
         mBitmap = Util.allocateBitmap(getBounds().width(), getBounds().height());
-        if (mBitmap == null) return;
+        if (mBitmap == null) 
+            return;
 
         Canvas canvas = new Canvas(mBitmap);
         Rect r = new Rect();
@@ -124,10 +126,12 @@ public class AlphaPatternDrawable extends Drawable {
      * takes a few milliseconds.
      */
     public Bitmap generatePatternBitmap(int w, int h) {
-        if (w <= 0 || h <= 0) return null;
+        if (w <= 0 || h <= 0) 
+            return null;
 
         Bitmap bitmap = Util.allocateBitmap(w, h);
-        if (bitmap == null) return null;
+        if (bitmap == null) 
+            return null;
 
         Canvas canvas = new Canvas(bitmap);
 
