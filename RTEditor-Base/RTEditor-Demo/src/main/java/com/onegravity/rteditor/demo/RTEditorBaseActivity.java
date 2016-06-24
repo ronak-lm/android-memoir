@@ -94,8 +94,8 @@ public class RTEditorBaseActivity extends AppCompatActivity {
         if (requestCode == REQUEST_PERMISSION) {
             for (int i = 0, len = permissions.length; i < len; i++) {
                 String permission = permissions[i];
-                if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                    if (Manifest.permission.WRITE_EXTERNAL_STORAGE.equals(permission)) {
+                if (grantResults[i] == PackageManager.PERMISSION_DENIED 
+                        && Manifest.permission.WRITE_EXTERNAL_STORAGE.equals(permission)) {
                         showRationale(permission, R.string.permission_denied_storage);
                     }
                 }
