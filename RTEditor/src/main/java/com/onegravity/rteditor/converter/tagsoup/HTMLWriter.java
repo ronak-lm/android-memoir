@@ -706,7 +706,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      * @see org.xml.sax.ContentHandler#characters
      */
     @Override
-    public void characters(char ch[], int start, int len) throws SAXException {
+    public void characters(char[] ch, int start, int len) throws SAXException {
         if (!cdataElement) {
             if (mIgnoreChars) {
                 writeText4Links();
@@ -737,7 +737,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
      * @see org.xml.sax.ContentHandler#ignorableWhitespace
      */
     @Override
-    public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
+    public void ignorableWhitespace(char[] ch, int start, int length) throws SAXException {
         writeText4Links();
         writeEscUTF16(new String(ch), start, length, false);
         super.ignorableWhitespace(ch, start, length);
@@ -1104,7 +1104,7 @@ public class HTMLWriter extends XMLFilterImpl implements LexicalHandler {
 
     private StringBuffer mLastText4Links = new StringBuffer();
 
-    private void collectText4Links(char ch[], int start, int len) throws SAXException {
+    private void collectText4Links(char[] ch, int start, int len) throws SAXException {
         mLastText4Links.append(String.valueOf(ch, start, len));
     }
 
