@@ -80,7 +80,7 @@ abstract class SpanCollector<V> {
      * Return an array of the markup objects attached to the specified slice of a Spannable and whose
      * type is the specified type or a subclass of it (see Spanned.getSpans(int, int, Class<T>)).
      */
-    final protected RTSpan<V>[] getSpansAndroid(Spannable str, int selStart, int selEnd) {
+    protected final RTSpan<V>[] getSpansAndroid(Spannable str, int selStart, int selEnd) {
         RTSpan<V>[] spans = str.getSpans(selStart, selEnd, mSpanClazz);
         return spans == null ? (RTSpan<V>[]) Array.newInstance(mSpanClazz) : spans;
     }
@@ -88,7 +88,7 @@ abstract class SpanCollector<V> {
     /**
      * @return True if the flags contain at least one of the values, False otherwise.
      */
-    final protected boolean isOneFlagSet(int flags, int...value) {
+    protected final boolean isOneFlagSet(int flags, int...value) {
         for (int flag : value) {
             if ((flags & flag) == flag) {
                 return true;

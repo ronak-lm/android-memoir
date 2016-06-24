@@ -36,7 +36,7 @@ import java.lang.ref.SoftReference;
  */
 public class RTProxyImpl implements RTProxy {
 
-    final private SoftReference<Activity> mActivity;
+    private final SoftReference<Activity> mActivity;
 
     public RTProxyImpl(Activity activity) {
         mActivity = new SoftReference<>(activity);

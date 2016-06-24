@@ -41,6 +41,6 @@ public abstract class Constants {
         }
     }
 
-    public final static int CROP_IMAGE = 107;
+    public static final int CROP_IMAGE = 107;
 
 }

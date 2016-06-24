@@ -26,8 +26,8 @@ import com.onegravity.rteditor.utils.Helper;
  * It's the paragraph style for a single line.
  */
 public class SingleParagraphStyle implements ParagraphStyle {
-    final private ParagraphType mType;
-    final private ParagraphStyle mStyle;
+    private final ParagraphType mType;
+    private final ParagraphStyle mStyle;
 
     public SingleParagraphStyle(ParagraphType type, ParagraphStyle style) {
         mType = type;

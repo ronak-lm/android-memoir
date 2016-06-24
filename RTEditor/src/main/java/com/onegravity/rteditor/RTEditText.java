@@ -476,7 +476,7 @@ public class RTEditText extends EditText implements TextWatcher, SpanWatcher, Li
         }
     }
 
-    synchronized private void setParagraphsAreUp2Date(boolean value) {
+    private synchronized void setParagraphsAreUp2Date(boolean value) {
         if (! mIgnoreParagraphChanges) {
             mParagraphsAreUp2Date = value;
         }

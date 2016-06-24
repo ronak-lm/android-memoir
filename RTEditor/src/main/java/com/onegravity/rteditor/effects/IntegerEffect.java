@@ -37,7 +37,7 @@ abstract class IntegerEffect<C extends RTSpan<Integer>> extends CharacterEffect<
     }
 
     @Override
-    final protected RTSpan<Integer> newSpan(Integer value) {
+    protected final RTSpan<Integer> newSpan(Integer value) {
         try {
             if (value != null) {
                 Class[] paramTypes = {int.class};

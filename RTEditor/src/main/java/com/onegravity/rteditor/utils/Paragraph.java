@@ -22,8 +22,8 @@ package com.onegravity.rteditor.utils;
 public class Paragraph extends Selection {
     private static final long serialVersionUID = 2475227150049924994L;
 
-    final private boolean mIsFirst;
-    final private boolean mIsLast;
+    private final boolean mIsFirst;
+    private final boolean mIsLast;
 
     public Paragraph(int start, int end, boolean isFirst, boolean isLast) {
         super(start, end);

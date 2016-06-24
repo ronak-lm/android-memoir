@@ -140,30 +140,30 @@ public class RTManager implements RTToolbarListener, RTEditTextListener {
     /*
      * We need these to delay hiding the toolbar after a focus loss of an editor
      */
-    transient private Handler mHandler;
-    transient private boolean mIsPendingFocusLoss;
-    transient private boolean mCancelPendingFocusLoss;
+    private transient Handler mHandler;
+    private transient boolean mIsPendingFocusLoss;
+    private transient boolean mCancelPendingFocusLoss;
 
     /*
      * Map the registered editors by editor id (RTEditText.getId())
      */
-    transient private Map<Integer, RTEditText> mEditors;
+    private transient Map<Integer, RTEditText> mEditors;
 
     /*
      * Map the registered toolbars by toolbar id (RTToolbar.getId())
      */
-    transient private Map<Integer, RTToolbar> mToolbars;
+    private transient Map<Integer, RTToolbar> mToolbars;
 
     /*
      * That's our link to "the outside world" to perform operations that need
      * access to a Context or an Activity
      */
-    transient private RTApi mRTApi;
+    private transient RTApi mRTApi;
 
     /*
      * The RTOperationManager is used to undo/redo operations
      */
-    transient private RTOperationManager mOPManager;
+    private transient RTOperationManager mOPManager;
 
     // ****************************************** Lifecycle Methods *******************************************
 

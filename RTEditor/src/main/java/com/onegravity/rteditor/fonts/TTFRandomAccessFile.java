@@ -23,7 +23,7 @@ import java.io.RandomAccessFile;
  * This class is a TTFInputStream for RandomAccessFile (used to read system fonts).
  */
 public class TTFRandomAccessFile implements TTFInputStream {
-    final private RandomAccessFile mFile;
+    private final RandomAccessFile mFile;
 
     TTFRandomAccessFile(RandomAccessFile file) {
         mFile = file;

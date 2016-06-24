@@ -22,7 +22,7 @@ import android.widget.TextView;
  * The spinner item for the font size.
  */
 public class FontSizeSpinnerItem extends SpinnerItem {
-    final private int mFontSize;
+    private final int mFontSize;
     private final boolean mIsEmpty;
 
     public FontSizeSpinnerItem(int size, String title, boolean isEmpty) {

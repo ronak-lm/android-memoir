@@ -38,7 +38,7 @@ import java.util.List;
  *
  * @param <C> is the RTSpan<V> used by the Effect (e.g. BoldEffect uses BoldSpan)
  */
-abstract public class Effect<V, C extends RTSpan<V>> {
+public abstract class Effect<V, C extends RTSpan<V>> {
 
     private SpanCollector<V> mSpanCollector;
 
@@ -49,7 +49,7 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      *
      * @return True if the effect exists in the current selection, False otherwise.
      */
-    final public boolean existsInSelection(RTEditText editor) {
+    public final boolean existsInSelection(RTEditText editor) {
         Selection selection = getSelection(editor);
         List<RTSpan<V>> spans = getSpans(editor.getText(), selection, SpanCollectMode.SPAN_FLAGS);
 
@@ -61,7 +61,7 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      *
      * @return The returned list, must NEVER be null.
      */
-    final public List<V> valuesInSelection(RTEditText editor) {
+    public final List<V> valuesInSelection(RTEditText editor) {
         List<V> result = new ArrayList<>();
 
         Selection selection = getSelection(editor);
@@ -77,7 +77,7 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      * Remove all effects of this type from the currently selected text of the active RTEditText.
      * If the selection is empty (cursor), formatting for the whole text is removed.
      */
-    final public void clearFormattingInSelection(RTEditText editor) {
+    public final void clearFormattingInSelection(RTEditText editor) {
         Spannable text = editor.getText();
 
         // if no selection --> select the whole text
@@ -102,7 +102,7 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      *
      * @return the list of spans in this Spannable/Selection, never Null
      */
-    final public List<RTSpan<V>> getSpans(Spannable str, Selection selection, SpanCollectMode mode) {
+    public final List<RTSpan<V>> getSpans(Spannable str, Selection selection, SpanCollectMode mode) {
         if (mSpanCollector == null) {
             // lazy initialize the SpanCollector
             Type[] types = ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments();
@@ -116,12 +116,12 @@ abstract public class Effect<V, C extends RTSpan<V>> {
     /**
      * @return a new SpanCollector for this effect
      */
-    abstract protected SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz);
+    protected abstract SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz);
 
     /**
      * @return the Selection for the specified RTEditText.
      */
-    abstract protected Selection getSelection(RTEditText editor);
+    protected abstract Selection getSelection(RTEditText editor);
 
     /**
      * Apply this effect to the selection.
@@ -130,6 +130,6 @@ abstract public class Effect<V, C extends RTSpan<V>> {
      * @param editor The editor to apply the effect to (current selection)
      * @param value The value to apply (depends on the Effect)
      */
-    abstract public void applyToSelection(RTEditText editor, V value);
+    public abstract void applyToSelection(RTEditText editor, V value);
 
 }

@@ -33,7 +33,7 @@ import java.util.List;
 abstract class ParagraphEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
 
     @Override
-    final protected SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
+    protected final SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
         return new ParagraphSpanCollector<>(spanClazz);
     }
 
@@ -42,7 +42,7 @@ abstract class ParagraphEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
      *         ParagraphEffects always operate on whole paragraphs.
      */
     @Override
-    final protected Selection getSelection(RTEditText editor) {
+    protected final Selection getSelection(RTEditText editor) {
         return editor.getParagraphsInSelection();
     }
 
