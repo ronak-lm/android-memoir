@@ -64,7 +64,7 @@ public class LineIterator implements Iterator<String> {
      * @param reader the <code>Reader</code> to read from, not null
      * @throws IllegalArgumentException if the reader is null
      */
-    public LineIterator(final Reader reader) throws IllegalArgumentException {
+    public LineIterator(final Reader reader) {
         if (reader == null) {
             throw new IllegalArgumentException("Reader must not be null");
         }

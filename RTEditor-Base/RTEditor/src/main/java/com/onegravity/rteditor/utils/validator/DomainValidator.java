@@ -1112,7 +1112,7 @@ public class DomainValidator implements Serializable {
      * Allows code to be compiled with Java 1.4 and 1.5 
      * @throws IllegalArgumentException if the input string doesn't conform to RFC 3490 specification
      */
-    private static final String toASCII(String line) throws IllegalArgumentException {
+    private static final String toASCII(String line) {
 //        java.net.IDN.toASCII(line); // Java 1.6+
         // implementation for Java 1.4 and 1.5
         // effectively this is done by IDN.toASCII but we want to skip the entire call
