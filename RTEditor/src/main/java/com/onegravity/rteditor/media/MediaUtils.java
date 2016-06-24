@@ -33,6 +33,12 @@ import com.onegravity.rteditor.utils.Helper;
  * Collection of utility functions used in the media package
  */
 public class MediaUtils {
+    
+    /**
+     * Prevents class instantiation.
+     */
+    private MediaUtils() {
+    }
 
     /**
      * Creates a file with a non-conflicting file name in a specified folder based on an existing file name.

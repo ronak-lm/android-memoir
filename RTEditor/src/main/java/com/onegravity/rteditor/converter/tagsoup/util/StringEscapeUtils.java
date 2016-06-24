@@ -62,6 +62,12 @@ public class StringEscapeUtils {
             );
 
     /**
+     * Prevents class instantiation.
+     */
+    private StringEscapeUtils() {
+    }
+
+    /**
      * <p>Escapes the characters in a {@code String} using HTML entities.</p>
      * <p/>
      * <p>
