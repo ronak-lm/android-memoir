@@ -341,7 +341,7 @@ public class RTManager implements RTToolbarListener, RTEditTextListener {
         mToolbarIsVisible = visible;
 
         final ViewGroup toolbarContainer = toolbar.getToolbarContainer();
-        int visibility = View.VISIBLE;
+        int visibility;
         synchronized (toolbarContainer) {
             visibility = toolbarContainer.getVisibility();
         }
@@ -429,7 +429,7 @@ public class RTManager implements RTToolbarListener, RTEditTextListener {
         RTEditText editor = getActiveEditor();
         if (editor != null) {
             String url = null;
-            String linkText = null;
+            String linkText;
 
             List<RTSpan<String>> links = Effects.LINK.getSpans(editor.getText(), new Selection(editor), SpanCollectMode.EXACT);
             if (links.isEmpty()) {

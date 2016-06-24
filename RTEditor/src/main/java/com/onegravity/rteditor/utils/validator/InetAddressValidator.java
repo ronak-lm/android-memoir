@@ -86,7 +86,7 @@ public class InetAddressValidator implements Serializable {
                 return false;
             }
 
-            int iIpSegment = 0;
+            int iIpSegment;
 
             try {
                 iIpSegment = Integer.parseInt(ipSegment);
@@ -165,7 +165,7 @@ public class InetAddressValidator implements Serializable {
                 if (octet.length() > 4) {
                     return false;
                 }
-                int octetInt = 0;
+                int octetInt;
                 try {
                     octetInt = Integer.valueOf(octet, 16).intValue();
                 } catch (NumberFormatException e) {

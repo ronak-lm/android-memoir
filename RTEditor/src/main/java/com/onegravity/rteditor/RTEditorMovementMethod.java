@@ -128,7 +128,7 @@ public class RTEditorMovementMethod extends ArrowKeyMovementMethod {
 
         // scale text widths by relative font size (absolute size / default size)
         final float defaultSize = textView.getTextSize();
-        float scaleFactor = 1f;
+        float scaleFactor;
         AbsoluteSizeSpan[] absSpans = lineText.getSpans(0, lineLength, AbsoluteSizeSpan.class);
         if (absSpans != null) {
             for (AbsoluteSizeSpan span : absSpans) {
@@ -144,7 +144,7 @@ public class RTEditorMovementMethod extends ArrowKeyMovementMethod {
         }
 
         // find index of touched character
-        float startChar = 0;
+        float startChar;
         float endChar = 0;
         for (int i = 0; i < lineLength; i++) {
             startChar = endChar;
