@@ -90,7 +90,7 @@ public class MediaUtils {
      * @throws IllegalArgumentException If the uri is null or we can't resolve the uri to an absolute file path
      *                                  (meaning the uri isn't valid)
      */
-    public static String determineOriginalFile(Context context, Uri uri) throws IllegalArgumentException {
+    public static String determineOriginalFile(Context context, Uri uri) {
         String originalFile = null;
 
         if (uri != null) {

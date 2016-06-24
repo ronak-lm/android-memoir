@@ -886,7 +886,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
 
     // Split the supplied String into words or phrases seperated by spaces.
     // Recognises quotes around a phrase and doesn't split it.
-    private static String[] split(String val) throws IllegalArgumentException {
+    private static String[] split(String val) {
         val = val.trim();
         if (val.length() == 0) {
             return new String[0];

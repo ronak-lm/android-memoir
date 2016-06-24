@@ -556,7 +556,7 @@ public class AttributesImpl implements Attributes {
      * @param index The index to report.
      * @throws java.lang.ArrayIndexOutOfBoundsException Always.
      */
-    private void badIndex(int index) throws ArrayIndexOutOfBoundsException {
+    private void badIndex(int index) {
         String msg = "Attempt to modify attribute at illegal index: " + index;
         throw new ArrayIndexOutOfBoundsException(msg);
     }

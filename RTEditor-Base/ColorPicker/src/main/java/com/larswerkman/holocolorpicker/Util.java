@@ -78,7 +78,7 @@ public class Util {
      *
      * @throws NumberFormatException
      */
-    public static int convertToColorInt(String a, String r, String g, String b, boolean useAlpha) throws NumberFormatException {
+    public static int convertToColorInt(String a, String r, String g, String b, boolean useAlpha) {
         int alpha = useAlpha ? Integer.parseInt(a, 16) : 0xff;
         int red = Integer.parseInt(r, 16);
         int green = Integer.parseInt(g, 16);
