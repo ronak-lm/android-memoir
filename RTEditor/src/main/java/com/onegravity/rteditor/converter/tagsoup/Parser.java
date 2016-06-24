@@ -298,7 +298,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
 
     @Override
     public boolean getFeature(String name) throws SAXNotRecognizedException, SAXNotSupportedException {
-        Boolean b = (Boolean) theFeatures.get(name);
+        Boolean b = theFeatures.get(name);
         if (b == null) {
             throw new SAXNotRecognizedException("Unknown feature " + name);
         }
@@ -307,7 +307,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
 
     @Override
     public void setFeature(String name, boolean value) throws SAXNotRecognizedException, SAXNotSupportedException {
-        Boolean b = (Boolean) theFeatures.get(name);
+        Boolean b = theFeatures.get(name);
         if (b == null) {
             throw new SAXNotRecognizedException("Unknown feature " + name);
         }
@@ -920,7 +920,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
                 lastc = c;
             }
             l.add(val.substring(s, e));
-            return (String[]) l.toArray(new String[0]);
+            return l.toArray(new String[0]);
         }
     }
 
