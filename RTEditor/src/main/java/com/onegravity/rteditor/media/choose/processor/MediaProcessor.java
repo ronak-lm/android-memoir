@@ -44,9 +44,9 @@ public abstract class MediaProcessor implements Runnable {
         public void onError(String reason);
     }
 
-    final private MediaProcessorListener mListener;
+    private final MediaProcessorListener mListener;
 
-    final private String mOriginalFile;
+    private final String mOriginalFile;
 
     protected final RTMediaFactory<RTImage, RTAudio, RTVideo> mMediaFactory;
 
@@ -57,7 +57,7 @@ public abstract class MediaProcessor implements Runnable {
     }
 
     @Override
-    final public void run() {
+    public final void run() {
         try {
             processMedia();
         } catch (Exception e) {

@@ -50,12 +50,12 @@ public enum ParagraphType {
         }
     }
 
-    final private String mStartTag;
-    final private String mEndTag;
-    final private boolean mIsAlignment;
-    final private String mListStartTag;
-    final private String mListEndTag;
-    final private boolean mEndTagAddsLineBreak;
+    private final String mStartTag;
+    private final String mEndTag;
+    private final boolean mIsAlignment;
+    private final String mListStartTag;
+    private final String mListEndTag;
+    private final boolean mEndTagAddsLineBreak;
 
     private ParagraphType(String startTag, String endTag, String listStartTag,
                           String listEndTag, boolean isAlignment, boolean endTagAddsLineBreak) {

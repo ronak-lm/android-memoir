@@ -86,26 +86,26 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * A value of "true" indicates namespace URIs and unprefixed local names for
      * element and attribute names will be available.
      */
-    public final static String namespacesFeature = "http://xml.org/sax/features/namespaces";
+    public static final String namespacesFeature = "http://xml.org/sax/features/namespaces";
 
     /**
      * A value of "true" indicates that XML qualified names (with prefixes) and
      * attributes (including xmlns* attributes) will be available. We don't
      * support this value.
      */
-    public final static String namespacePrefixesFeature = "http://xml.org/sax/features/namespace-prefixes";
+    public static final String namespacePrefixesFeature = "http://xml.org/sax/features/namespace-prefixes";
 
     /**
      * Reports whether this parser processes external general entities (it
      * doesn't).
      */
-    public final static String externalGeneralEntitiesFeature = "http://xml.org/sax/features/external-general-entities";
+    public static final String externalGeneralEntitiesFeature = "http://xml.org/sax/features/external-general-entities";
 
     /**
      * Reports whether this parser processes external parameter entities (it
      * doesn't).
      */
-    public final static String externalParameterEntitiesFeature = "http://xml.org/sax/features/external-parameter-entities";
+    public static final String externalParameterEntitiesFeature = "http://xml.org/sax/features/external-parameter-entities";
 
     /**
      * May be examined only during a parse, after the startDocument() callback
@@ -113,20 +113,20 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * specified standalone="yes" in its XML declaration, and otherwise is
      * false. (It's always false.)
      */
-    public final static String isStandaloneFeature = "http://xml.org/sax/features/is-standalone";
+    public static final String isStandaloneFeature = "http://xml.org/sax/features/is-standalone";
 
     /**
      * A value of "true" indicates that the LexicalHandler will report the
      * beginning and end of parameter entities (it won't).
      */
-    public final static String lexicalHandlerParameterEntitiesFeature = "http://xml.org/sax/features/lexical-handler/parameter-entities";
+    public static final String lexicalHandlerParameterEntitiesFeature = "http://xml.org/sax/features/lexical-handler/parameter-entities";
 
     /**
      * A value of "true" indicates that system IDs in declarations will be
      * absolutized (relative to their base URIs) before reporting. (This returns
      * true but doesn't actually do anything.)
      */
-    public final static String resolveDTDURIsFeature = "http://xml.org/sax/features/resolve-dtd-uris";
+    public static final String resolveDTDURIsFeature = "http://xml.org/sax/features/resolve-dtd-uris";
 
     /**
      * Has a value of "true" if all XML names (for elements, prefixes,
@@ -135,7 +135,7 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * supports fast testing of equality/inequality against string constants,
      * rather than forcing slower calls to String.equals(). (We always intern.)
      */
-    public final static String stringInterningFeature = "http://xml.org/sax/features/string-interning";
+    public static final String stringInterningFeature = "http://xml.org/sax/features/string-interning";
 
     /**
      * Returns "true" if the Attributes objects passed by this parser in
@@ -143,82 +143,82 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * interface. (They don't.)
      */
 
-    public final static String useAttributes2Feature = "http://xml.org/sax/features/use-attributes2";
+    public static final String useAttributes2Feature = "http://xml.org/sax/features/use-attributes2";
 
     /**
      * Returns "true" if the Locator objects passed by this parser in
      * ContentHandler.setDocumentLocator() implement the
      * org.xml.sax.ext.Locator2 interface. (They don't.)
      */
-    public final static String useLocator2Feature = "http://xml.org/sax/features/use-locator2";
+    public static final String useLocator2Feature = "http://xml.org/sax/features/use-locator2";
 
     /**
      * Returns "true" if, when setEntityResolver is given an object implementing
      * the org.xml.sax.ext.EntityResolver2 interface, those new methods will be
      * used. (They won't be.)
      */
-    public final static String useEntityResolver2Feature = "http://xml.org/sax/features/use-entity-resolver2";
+    public static final String useEntityResolver2Feature = "http://xml.org/sax/features/use-entity-resolver2";
 
     /**
      * Controls whether the parser is reporting all validity errors (We don't
      * report any validity errors.)
      */
-    public final static String validationFeature = "http://xml.org/sax/features/validation";
+    public static final String validationFeature = "http://xml.org/sax/features/validation";
 
     /**
      * Controls whether the parser reports Unicode normalization errors as
      * described in section 2.13 and Appendix B of the XML 1.1 Recommendation.
      * (We don't normalize.)
      */
-    public final static String unicodeNormalizationCheckingFeature = "http://xml.org/sax/features/unicode-normalization-checking";
+    public static final String unicodeNormalizationCheckingFeature = "http://xml.org/sax/features/unicode-normalization-checking";
 
     /**
      * Controls whether, when the namespace-prefixes feature is set, the parser
      * treats namespace declaration attributes as being in the
      * http://www.w3.org/2000/xmlns/ namespace. (It doesn't.)
      */
-    public final static String xmlnsURIsFeature = "http://xml.org/sax/features/xmlns-uris";
+    public static final String xmlnsURIsFeature = "http://xml.org/sax/features/xmlns-uris";
 
     /**
      * Returns "true" if the parser supports both XML 1.1 and XML 1.0. (Always
      * false.)
      */
-    public final static String XML11Feature = "http://xml.org/sax/features/xml-1.1";
+    public static final String XML11Feature = "http://xml.org/sax/features/xml-1.1";
 
     /**
      * A value of "true" indicates that the parser will ignore unknown elements.
      */
-    public final static String ignoreBogonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/ignore-bogons";
+    public static final String ignoreBogonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/ignore-bogons";
 
     /**
      * A value of "true" indicates that the parser will give unknown elements a
      * content model of EMPTY; a value of "false", a content model of ANY.
      */
-    public final static String bogonsEmptyFeature = "http://www.ccil.org/~cowan/tagsoup/features/bogons-empty";
+    public static final String bogonsEmptyFeature = "http://www.ccil.org/~cowan/tagsoup/features/bogons-empty";
 
     /**
      * A value of "true" indicates that the parser will allow unknown elements
      * to be the root element.
      */
-    public final static String rootBogonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/root-bogons";
+    public static final String rootBogonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/root-bogons";
 
     /**
      * A value of "true" indicates that the parser will return default attribute
      * values for missing attributes that have default values.
      */
-    public final static String defaultAttributesFeature = "http://www.ccil.org/~cowan/tagsoup/features/default-attributes";
+    public static final String defaultAttributesFeature = "http://www.ccil.org/~cowan/tagsoup/features/default-attributes";
 
     /**
      * A value of "true" indicates that the parser will translate colons into
      * underscores in names.
      */
-    public final static String translateColonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/translate-colons";
+    public static final String translateColonsFeature = "http://www.ccil.org/~cowan/tagsoup/features/translate-colons";
 
     /**
      * A value of "true" indicates that the parser will attempt to restart the
      * restartable elements.
      */
-    public final static String restartElementsFeature = "http://www.ccil.org/~cowan/tagsoup/features/restart-elements";
+    public static final String restartElementsFeature = "http://www.ccil.org/~cowan/tagsoup/features/restart-elements";
 
     /**
      * A value of "true" indicates that the parser will transmit whitespace in
@@ -226,13 +226,13 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * this is not done, because HTML is an SGML application and SGML suppresses
      * such whitespace.
      */
-    public final static String ignorableWhitespaceFeature = "http://www.ccil.org/~cowan/tagsoup/features/ignorable-whitespace";
+    public static final String ignorableWhitespaceFeature = "http://www.ccil.org/~cowan/tagsoup/features/ignorable-whitespace";
 
     /**
      * A value of "true" indicates that the parser will treat CDATA elements
      * specially. Normally true, since the input is by default HTML.
      */
-    public final static String CDATAElementsFeature = "http://www.ccil.org/~cowan/tagsoup/features/cdata-elements";
+    public static final String CDATAElementsFeature = "http://www.ccil.org/~cowan/tagsoup/features/cdata-elements";
 
     /**
      * Used to see some syntax events that are essential in some applications:
@@ -240,22 +240,22 @@ public class Parser extends DefaultHandler implements ScanHandler, XMLReader, Le
      * start and end of the DTD (and declaration of document element name). The
      * Object must implement org.xml.sax.ext.LexicalHandler.
      */
-    public final static String lexicalHandlerProperty = "http://xml.org/sax/properties/lexical-handler";
+    public static final String lexicalHandlerProperty = "http://xml.org/sax/properties/lexical-handler";
 
     /**
      * Specifies the Scanner object this Parser uses.
      */
-    public final static String scannerProperty = "http://www.ccil.org/~cowan/tagsoup/properties/scanner";
+    public static final String scannerProperty = "http://www.ccil.org/~cowan/tagsoup/properties/scanner";
 
     /**
      * Specifies the Schema object this Parser uses.
      */
-    public final static String schemaProperty = "http://www.ccil.org/~cowan/tagsoup/properties/schema";
+    public static final String schemaProperty = "http://www.ccil.org/~cowan/tagsoup/properties/schema";
 
     /**
      * Specifies the AutoDetector (for encoding detection) this Parser uses.
      */
-    public final static String autoDetectorProperty = "http://www.ccil.org/~cowan/tagsoup/properties/auto-detector";
+    public static final String autoDetectorProperty = "http://www.ccil.org/~cowan/tagsoup/properties/auto-detector";
 
     // Due to sucky Java order of initialization issues, these
     // entries are maintained separately from the initial values of

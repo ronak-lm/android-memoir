@@ -24,7 +24,7 @@ import android.widget.TextView;
  * The base class for the color and font spinners.
  */
 public abstract class SpinnerItem {
-    final protected String mTitle;
+    protected final String mTitle;
 
     protected OnChangedListener mOnChangedListener;
     protected Object mListenerTag;

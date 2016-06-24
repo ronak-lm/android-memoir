@@ -21,7 +21,7 @@ package com.onegravity.rteditor.converter;
  * It's the accumulated paragraph styles (all SingleParagraphStyle of a paragraph together)
  */
 public class AccumulatedParagraphStyle {
-	final private ParagraphType mType;
+	private final ParagraphType mType;
 	private int mAbsoluteIndent;
 	private int mRelativeIndent;
 

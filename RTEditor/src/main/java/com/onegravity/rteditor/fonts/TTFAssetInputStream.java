@@ -23,7 +23,7 @@ import java.io.InputStream;
  * This class is a TTFInputStream for AssetInputStream (used to read fonts from the assets folder).
  */
 public class TTFAssetInputStream implements TTFInputStream {
-    final private InputStream mIn;
+    private final InputStream mIn;
 
     TTFAssetInputStream(InputStream in) {
         mIn = in;

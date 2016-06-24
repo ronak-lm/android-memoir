@@ -96,8 +96,8 @@ public class RTApi implements RTProxy, RTMediaFactory<RTImage, RTAudio, RTVideo>
 	 * Constructor
 	 */
 
-    transient final private RTProxy mRTProxy;    // not Serializable
-    final private RTMediaFactory<RTImage, RTAudio, RTVideo> mMediaFactory;
+    private final transient RTProxy mRTProxy;    // not Serializable
+    private final RTMediaFactory<RTImage, RTAudio, RTVideo> mMediaFactory;
 
     /**
      * @param context      Can be an Application or an Activity context

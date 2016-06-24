@@ -50,7 +50,7 @@ public class MediaChooserActivity extends MonitoredActivity implements
     private RTMediaFactory<RTImage, RTAudio, RTVideo> mMediaFactory;
     private MediaAction mMediaAction;
 
-    transient private MediaChooserManager mMediaChooserMgr;
+    private transient MediaChooserManager mMediaChooserMgr;
 
     private RTMedia mSelectedMedia;
 

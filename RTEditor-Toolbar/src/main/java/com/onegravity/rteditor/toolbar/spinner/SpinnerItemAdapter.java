@@ -40,8 +40,8 @@ import java.util.List;
  */
 public class SpinnerItemAdapter<T extends SpinnerItem> extends BaseAdapter implements SpinnerItem.OnChangedListener {
 
-    final private int mSpinnerId;
-    final private int mSpinnerItemId;
+    private final int mSpinnerId;
+    private final int mSpinnerItemId;
 
     private int mSelectedItem;
     private List<T> mItems;
@@ -54,7 +54,7 @@ public class SpinnerItemAdapter<T extends SpinnerItem> extends BaseAdapter imple
 
     private Handler mHandler;
 
-    final private SparseArray<View> mViewCache = new SparseArray<>();
+    private final SparseArray<View> mViewCache = new SparseArray<>();
 
     private int mSelectedBackgroundId;
 

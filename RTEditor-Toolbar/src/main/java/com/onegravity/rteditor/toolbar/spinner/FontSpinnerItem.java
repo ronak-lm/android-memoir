@@ -22,7 +22,7 @@ import com.onegravity.rteditor.fonts.RTTypeface;
  * The spinner item for the font.
  */
 public class FontSpinnerItem extends SpinnerItem {
-    final private RTTypeface mTypeface;
+    private final RTTypeface mTypeface;
 
     public FontSpinnerItem(RTTypeface typeface) {
         super(typeface == null ? "" : typeface.getName());

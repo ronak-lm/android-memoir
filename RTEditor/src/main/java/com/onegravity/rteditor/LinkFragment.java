@@ -52,8 +52,8 @@ public class LinkFragment extends DialogFragment {
      * The Link class describes a link (link text and an URL).
      */
     static class Link {
-        final private String mLinkText;
-        final private String mUrl;
+        private final String mLinkText;
+        private final String mUrl;
 
         private Link(String linkText, String url) {
             mLinkText = linkText;

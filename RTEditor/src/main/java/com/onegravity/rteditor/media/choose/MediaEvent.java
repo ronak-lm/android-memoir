@@ -23,7 +23,7 @@ import com.onegravity.rteditor.api.media.RTMedia;
  * It's received by the RTManager to insert the media into the active editor.
  */
 public class MediaEvent {
-    final private RTMedia mMedia;
+    private final RTMedia mMedia;
 
     public MediaEvent(RTMedia selectedMedia) {
         mMedia = selectedMedia;

@@ -31,8 +31,8 @@ import com.onegravity.rteditor.api.media.RTVideo;
  */
 public abstract class RTText {
 
-    final private RTFormat mRTFormat;
-    final private CharSequence mRTText;
+    private final RTFormat mRTFormat;
+    private final CharSequence mRTText;
 
     /**
      * Use this constructor if the class supports exactly one rich text format

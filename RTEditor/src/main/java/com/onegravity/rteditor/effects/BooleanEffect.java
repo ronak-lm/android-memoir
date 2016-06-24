@@ -39,7 +39,7 @@ abstract class BooleanEffect<C extends RTSpan<Boolean>> extends CharacterEffect<
      * @return If the value is Null or False then return Null -> remove all spans.
      */
     @Override
-    final protected RTSpan<Boolean> newSpan(Boolean value) {
+    protected final RTSpan<Boolean> newSpan(Boolean value) {
         try {
             return value ? mSpanClazz.newInstance() : null;
         } catch (IllegalAccessException e) {

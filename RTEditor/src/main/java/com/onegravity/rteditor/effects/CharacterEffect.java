@@ -29,12 +29,12 @@ import com.onegravity.rteditor.utils.Selection;
 abstract class CharacterEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
 
     @Override
-    final protected SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
+    protected final SpanCollector<V> newSpanCollector(Class<? extends RTSpan<V>> spanClazz) {
         return new CharacterSpanCollector<>(spanClazz);
     }
 
     @Override
-    final protected Selection getSelection(RTEditText editor) {
+    protected final Selection getSelection(RTEditText editor) {
         return new Selection(editor);
     }
 
@@ -96,6 +96,6 @@ abstract class CharacterEffect<V, C extends RTSpan<V>> extends Effect<V, C> {
      * @return the class of the span this effect supports. Can be Null but then the subclass has to
      * override applyToSelection(RTEditText, V)
      */
-    abstract protected RTSpan<V> newSpan(V value);
+    protected abstract RTSpan<V> newSpan(V value);
 
 }
